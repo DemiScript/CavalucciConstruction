@@ -156,3 +156,20 @@ p > span {
   height: auto;
   object-fit: contain;
 }
+
+/* Media Section, Section 5 */
+.section-5 {
+  padding-top: 150px;
+}
+.video-wrapper {
+  position: relative;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9 ;
+  border: none;
+}
