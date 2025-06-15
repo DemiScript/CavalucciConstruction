@@ -1,0 +1,140 @@
+/* This files contains additional styles for index.html*/
+@import "global.css";
+
+/* Section 2  */
+.section-2 {
+  text-align: center;
+}
+.section-2 h1, .section-4 h1 {
+  color: var(--d-blue);
+}
+p > span {
+  font-weight: 700;
+}
+
+/* Carousel */
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.carousel-image {
+  border-radius: 10px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.carousel-image.center {
+  width: 580px;
+  opacity: 1;
+  filter: none;
+}
+
+.carousel-image.side {
+  width: 359px;
+  opacity: 0.6;
+  filter: brightness(1.2) grayscale(0.1);
+}
+
+/* Services Card */
+.hover-card {
+  position: relative;
+  width: 380px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.137);
+  transition: transform 0.3s ease;
+}
+
+.card-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  transform: translateY(60%);
+  transition: transform 0.4s ease;
+  text-align: left;
+}
+
+.hover-card:hover .card-footer {
+  transform: translateY(0);
+}
+
+.card-footer h3 {
+  font-size: 20px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.card-footer .card-desc {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* Example transparent button */
+.transparent-red {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #550000;
+  background: transparent;
+  color: #550000;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.transparent-red:hover {
+  background: #550000;
+  color: #fff;
+}
+
+/* CTA Section 4 */
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  padding-top: 140px;
+}
+
+.icon-text-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-family-alt);
+  font-weight: 500;
+  color: var(--nav-link); /* Replace with your color variable */
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.icon-text .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
