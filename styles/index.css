@@ -54,15 +54,34 @@ p > span {
 }
 
 /* Services Card */
+.services-wrapper > .row {
+  padding: 24px 0;
+}
+
+.row > .col {
+  padding: 24px 0;
+  /* GPT */
+  display: flex;
+  justify-content: center;
+}
+
 .hover-card {
   position: relative;
-  width: 380px;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 35px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.137);
   transition: transform 0.3s ease;
+  margin-bottom: 24px;
 }
 
+@media (max-width: 992px) {
+  .hover-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 .card-img {
   width: 100%;
   display: block;
@@ -76,8 +95,8 @@ p > span {
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  transform: translateY(60%);
+  padding: 24px;
+  transform: translateY(55%);
   transition: transform 0.4s ease;
   text-align: left;
 }
@@ -86,12 +105,16 @@ p > span {
   transform: translateY(0);
 }
 
+.hover-card:hover img {
+  transform: scale(1.25);
+  transition: transform 0.4s ease;
+}
+
 .card-footer h3 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0 0 8px;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
 .card-footer .card-desc {
@@ -143,12 +166,6 @@ p > span {
   font-weight: 500;
   text-transform: uppercase;
   white-space: nowrap;
-}
-@media screen and (max-width: 768px) {
-  /* .icon-text > span {
-    font-size: 14px;
-  }
-   */
 }
 
 .icon-text .icon {
