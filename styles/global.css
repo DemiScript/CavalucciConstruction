@@ -25,6 +25,7 @@ html {
   padding: 0;
   font-family: var(--font-family);
   font-size: var(--font-size-base);
+  letter-spacing: 0.08em;
   color: var(--dark);
 }
 
@@ -45,7 +46,6 @@ p {
   font-family: var(--font-family-alt);
   font-weight: 500;
   line-height: 1.25;
-  letter-spacing: 0.08em;
 }
 .hero-content p {
   font-family: var(--font-family-base);
@@ -110,7 +110,6 @@ section.hero {
   font-family: var(--font-family-alt);
   font-weight: 700;
   font-size: 0.75rem;
-  letter-spacing: 0.10em;
   text-decoration: none;
 
   /* button properties */
