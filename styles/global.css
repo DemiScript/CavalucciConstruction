@@ -11,8 +11,9 @@ html {
   --font-family-alt: 'Inter', sans-serif;
   --font-sz-heading: 1.5rem;
   --font-size-base: clamp(1rem, 2.5vw, 1.25rem);
-  --primary: #E9E8E8;
-  
+  --light: #E9E8E8;
+  --dark: #2C2C2C;
+  --d-blue: #0D1821;
   --nav-link: #BDBABA;
   --accent: #550000;
 
@@ -24,7 +25,7 @@ html {
   padding: 0;
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  color: var(--primary);
+  color: var(--dark);
 }
 
 /* Headings & Media Query*/
@@ -36,15 +37,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 
 h1, .h1 { 
   font-size: var(font-sz-heading);
+  color: var(--light);
 }
 
 /* Paragraph */
 p {
-  font-family: var(--font-family-base);
-  color: var(--nav-link);
+  font-family: var(--font-family-alt);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.25;
   letter-spacing: 0.08em;
+}
+.hero-content p {
+  font-family: var(--font-family-base);
+  color: var(--light);
 }
 
 /* Navigation Bar & When Page Active Show Underline & Effect when Link is hovered over */
@@ -59,10 +64,10 @@ a.active {
   text-decoration: underline;
   text-underline-offset: 5px; 
   text-decoration-thickness: 2px;
-  color: var(--primary) !important;
+  color: var(--light) !important;
 }
 a.nav-link:hover {
-  color: var(--primary); 
+  color: var(--light); 
   text-decoration: underline;
   text-underline-offset: 5px; 
   text-decoration-thickness: 2px;
@@ -75,7 +80,7 @@ a.nav-link:hover {
 }
 
 /* Hero & Nav Bar Section */
-section {
+section.hero {
   height: 795px;
   background-image: url('../images/index-hero.png');
   background-size: cover;
@@ -98,9 +103,9 @@ section {
 }
 
 /* Buttons */
-.transparent-white {
+.transparent-white, .transparent-red {
   /* text properties */
-  color: var(--primary);
+  color: var(--light);
   text-transform: uppercase;
   font-family: var(--font-family-alt);
   font-weight: 700;
@@ -110,13 +115,13 @@ section {
 
   /* button properties */
   background-color: none;
-  border: 3px solid var(--primary);
+  border: 3px solid var(--light);
   padding: 12px 0;
   width: 310px;
   cursor: pointer;
 }
-.transparent-white:hover {
-  background-color: var(--primary);
+.transparent-white:hover, .transparent-red:hover {
+  background-color: var(--light);
   color: #2C2C2C;
   transition: all 0.3s ease-in-out;
 }
