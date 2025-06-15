@@ -60,8 +60,6 @@ p > span {
 
 .row > .col {
   padding: 24px 0;
-  /* GPT */
-  display: flex;
   justify-content: center;
 }
 
@@ -179,11 +177,11 @@ p > span {
   padding-top: 150px;
 }
 .video-wrapper {
-  position: relative;
+  align-items: center;
 }
 
 .video-wrapper iframe {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
