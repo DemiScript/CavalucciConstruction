@@ -188,20 +188,4 @@ p > span {
   aspect-ratio: 16 / 9 ;
   border: none;
 }
-/* Contact-specific styles */
-.contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
 
-.contact-item i {
-  margin-right: 10px;
-  color: #333;
-}
-
-.contact-item p {
-  margin: 0;
-  font-size: 1rem;
-  display: block;  /* This ensures text is stacked vertically */
-}
