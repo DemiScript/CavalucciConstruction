@@ -24,16 +24,24 @@
 }
 
 /* Section 6 Portfolio */
-/* .gallery-section{
-  padding-top: 24px;
-} */
+.gallery-section, .gallery-image{
+  padding-top: 16px;
+}
 
 .gallery-image {
-  width: 379px;
+  width: 100%;
   height: auto;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 992px) {
+  .gallery-image {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 /* Hover Effect */
@@ -41,7 +49,6 @@
   filter: brightness(75%);
 }
 
-/* Modal styling */
 .image-modal {
   display: none;
   position: fixed;
@@ -55,7 +62,35 @@
   align-items: center;
 }
 
+.modal-content-wrapper {
+  position: absolute;
+  max-width: 80%;
+  display: flex;
+  justify-content: left;
+  align-items: end;
+}
+
 .image-modal img {
   max-width: 80%;
   border-radius: 8px;
+}
+
+.modal-footer-overlay {
+  position: absolute;
+  background: rgba(243, 231, 231, 0.664);
+  color: var(--light);
+  padding: 16px 20px;
+  border-radius: 0 0 8px 8px;
+  min-width:80%;
+}
+
+.modal-title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal-description {
+  font-size: 16;
 }

@@ -79,18 +79,39 @@
 
     <!-- Gallery -->
     <section class="container gallery-section">
-      <div class="gallery">
-        <img src="/images/gallery/a-1.jpg" alt="Gallery Image 1" class="gallery-image">
-        <img src="/images/gallery/b-1.jpg" alt="Gallery Image 2" class="gallery-image">
-        <img src="/images/gallery/c-1.jpg" alt="Gallery Image 3" class="gallery-image">
-        <img src="/images/gallery/d-1.jpg" alt="Gallery Image 4" class="gallery-image">
-        <img src="/images/gallery/e-1.jpg" alt="Gallery Image 5" class="gallery-image">
-        <img src="/images/gallery/f-1.jpg" alt="Gallery Image 6" class="gallery-image">
+      <div class="row row-cols-3 row-cols-md-2">
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="/images/gallery/a-1.jpg" alt="Gallery Image 1" class="gallery-image">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="/images/gallery/b-1.jpg" alt="Gallery Image 2" class="gallery-image">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="/images/gallery/c-1.jpg" alt="Gallery Image 3" class="gallery-image">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="/images/gallery/d-1.jpg" alt="Gallery Image 4" class="gallery-image">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="/images/gallery/e-1.jpg" alt="Gallery Image 5" class="gallery-image">
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <img src="/images/gallery/f-1.jpg" alt="Gallery Image 6" class="gallery-image">
+        </div>
       </div>
     </section>
+    <!-- <div class="image-modal" id="imageModal">
+      <img src="" alt="Enlarged Image" id="modalImg">
+    </div> -->
     <div class="image-modal" id="imageModal">
-  <img src="" alt="Enlarged Image" id="modalImg">
-</div>
+      <div class="modal-content-wrapper">
+        <img src="" alt="Enlarged Image" id="modalImg">
+        <div class="modal-footer-overlay">
+          <p class="modal-description">A short description about the project or image goes here.</p>
+          <h2 class="modal-title">Location</h2>
+        </div>
+      </div>
+    </div>
 
 
 <!-- JavaScript -->
