@@ -2,11 +2,11 @@
 
 body{
   background: #550000;
-  background: linear-gradient(342deg, rgba(85, 0, 0, 1) 38%, rgba(153, 153, 153, 0.83) 100%);
+  background: linear-gradient(351deg, rgba(85, 0, 0, 1) 27%, rgba(153, 153, 153, 1) 54%, rgba(25, 26, 27, 1) 96%);
 }
 
 .navbar {
-  background-color: #191A1B;
+  background-color: none;
 }
 
 /* Hero Section */
