@@ -1,0 +1,29 @@
+@import url(global.css);
+
+/* Portfolio Banner */
+.portfolio-hero {
+  background-image: url('../images/contact-image.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: left;
+  height: 427px;
+  
+}
+
+.portfolio-contents h1, .portfolio-contents p {
+  color: var(--light);
+}
+
+.contact-contents {
+  display: flex;
+  flex-direction: column;
+}
+.contact-hero h1, .contact-hero p {
+  color: var(--light);
+}
+
+/* Section 6 Portfolio */
+.gallery-section{
+  padding-top: 150px;
+}
