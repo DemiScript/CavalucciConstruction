@@ -1,0 +1,19 @@
+@import url(global.css);
+body{
+    background-color: #FFF4E9;
+}
+/* Hero Section */
+.about-hero {
+  height: 427px;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero h1,
+.about-hero p {
+  color: var(--dark);
+}
+
+.about-contents {
+  text-align: left;
+}
