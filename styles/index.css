@@ -130,10 +130,9 @@ p > span {
 }
 
 /* Card Button */
-.transparent-red, .transparent-red-sm {
+.transparent-red-sm {
   display: inline-block;
   padding: 8px 16px;
-  border: 3px solid var(--accent);
   background: transparent;
   color: var(--accent);
   text-transform: uppercase;
@@ -142,15 +141,7 @@ p > span {
   transition: all 0.3s ease;
   text-decoration: none;
 }
-.transparent-red-sm {
-  padding: 8px 16px;
-  font-size: 12px;
-  align-self: center;
-}
-.transparent-red:hover, .transparent-red-sm:hover {
-  background: var(--accent);
-  color: #fff;
-}
+
 
 /* Center and resize button on smaller screens */
 @media (max-width: 768px) {
@@ -159,7 +150,7 @@ p > span {
     text-align: center;
   }
 
-  .transparent-red {
+  .transparent-red-sm {
     align-self: center;
     font-size: 16px;
     padding: 8px 8px;
