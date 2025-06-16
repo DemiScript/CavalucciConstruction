@@ -244,3 +244,30 @@ p > span {
   }
 }
 
+
+@media (max-width: 992px) {
+  .carousel-image.center {
+    width: 70vw;
+  }
+
+  .carousel-image.side {
+    width: 40vw;
+  }
+
+  .carousel-track {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-track {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-image.center,
+  .carousel-image.side {
+    width: 90vw;
+  }
+}
