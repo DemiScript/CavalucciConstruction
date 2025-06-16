@@ -1,0 +1,22 @@
+@import url(global.css);
+
+body {
+  background-color: #FFF4E9;
+}
+
+.services-hero {
+  text-align: left;
+  height: 427px;
+  display: flex;
+  align-items: center;
+}
+
+.services-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.services-hero h1,
+.services-hero p {
+  color: var(--dark);
+}
