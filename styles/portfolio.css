@@ -49,6 +49,7 @@
   filter: brightness(75%);
 }
 
+/* Modal */
 .image-modal {
   display: none;
   position: fixed;
@@ -62,35 +63,42 @@
   align-items: center;
 }
 
-.modal-content-wrapper {
-  position: absolute;
-  max-width: 80%;
-  display: flex;
-  justify-content: left;
-  align-items: end;
+#modalImg {
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+  object-fit: contain;
 }
 
-.image-modal img {
+.modal-content-wrapper {
+  position: relative;
   max-width: 80%;
-  border-radius: 8px;
+  max-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-footer-overlay {
   position: absolute;
-  background: rgba(243, 231, 231, 0.664);
-  color: var(--light);
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.623);
+  backdrop-filter: blur(1px);
+  color: var(--d-blue);
   padding: 16px 20px;
-  border-radius: 0 0 8px 8px;
-  min-width:80%;
+  border-radius: 8px;
+  max-width: 60%;
 }
-
+.modal-description {
+  font-size: 16;
+}
 .modal-title {
-  margin: 0 0 6px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.modal-description {
-  font-size: 16;
-}
