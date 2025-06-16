@@ -24,11 +24,14 @@ section.about-hero {
   display: flex;
   flex-direction: column;
 }
-
+/* Footer Styles */
 footer {
-  background-color: var(--light);
+  background-color: #191A1B; 
+  color: var(--light);
+  border-color: #191A1B !important;
 }
 
-.footer a {
-  color: var(--dark);
+/* Footer Links */
+footer a {
+  color: var(--light) !important;
 }
