@@ -26,9 +26,9 @@ section.about-hero {
 }
 
 footer {
-  background-color: #191A1B;
+  background-color: var(--light);
 }
 
 .footer a {
-  color: var(--light);
+  color: var(--dark);
 }

@@ -179,7 +179,8 @@ p > span {
   align-items: center;
   text-align: center;
   max-width: 900px;
-  padding-top: 140px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .icon-text-group {
@@ -209,6 +210,7 @@ p > span {
 .section-5 {
   padding-top: 150px;
 }
+
 .video-wrapper {
   align-items: center;
 }
@@ -241,3 +243,4 @@ p > span {
     order: 1;
   }
 }
+
