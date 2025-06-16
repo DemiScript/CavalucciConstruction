@@ -126,13 +126,8 @@ section.hero {
   padding: 12px 0;
   width: 310px;
   cursor: pointer;
-  align-self: center;
 }
-.transparent-white:hover {
-  background-color: var(--light);
-  color: #2C2C2C;
-  transition: all 0.3s ease-in-out;
-}
+
 .transparent-red, .transparent-red-sm {
   color: var(--accent);
   border: 3px solid var(--accent);
@@ -143,6 +138,12 @@ section.hero {
   font-size: 12px;
   transition: all 0.3s ease;
   text-decoration: none;
+}
+
+.transparent-white:hover {
+  background-color: var(--light);
+  color: #2C2C2C;
+  transition: all 0.3s ease-in-out;
 }
 
 .transparent-red:hover, .transparent-red-sm:hover {
