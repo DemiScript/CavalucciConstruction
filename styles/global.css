@@ -75,7 +75,16 @@ a.nav-link:hover {
   text-underline-offset: 5px; 
   text-decoration-thickness: 2px;
 }
-
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+.navbar-toggler {
+  border: 1px solid white;
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px white;
+}
 /* Accent Color */
 .accent {
   color: var(--accent);
