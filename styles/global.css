@@ -127,10 +127,29 @@ section.hero {
   width: 310px;
   cursor: pointer;
 }
-.transparent-white:hover, .transparent-red:hover {
+
+.transparent-red, .transparent-red-sm {
+  color: var(--accent);
+  border: 3px solid var(--accent);
+  align-self: center;
+}
+.transparent-red-sm {
+  padding: 8px 8px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.transparent-white:hover {
   background-color: var(--light);
   color: #2C2C2C;
   transition: all 0.3s ease-in-out;
+}
+
+.transparent-red:hover, .transparent-red-sm:hover {
+  background: var(--accent);
+  transition: all 0.3s ease-in-out;
+  color: #fff;
 }
 
 /* Footer Styles */
