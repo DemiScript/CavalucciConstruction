@@ -124,7 +124,7 @@ p > span {
 .transparent-red {
   display: inline-block;
   padding: 8px 16px;
-  border: 2px solid var(--accent);
+  border: 3px solid var(--accent);
   background: transparent;
   color: var(--accent);
   text-transform: uppercase;
@@ -207,8 +207,3 @@ p > span {
     order: 1;
   }
 }
-
-/* Section 6 Portfolio
-.section-6 {
-  padding-top: 150px;
-} */
