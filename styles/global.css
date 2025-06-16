@@ -155,12 +155,11 @@ section.hero {
 /* Footer Style */
 .footer {
   border-top: 1px solid #ddd;
-  color: #333;
 }
 
 .footer a {
   text-decoration: none;
-  color: #333;
+  color: #191A1B;
 }
 
 .footer a:hover {

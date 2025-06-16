@@ -1,24 +1,34 @@
 @import url(global.css);
 
 body{
-    background-color: var(--accent);
+  background: #550000;
+  background: linear-gradient(342deg, rgba(85, 0, 0, 1) 38%, rgba(153, 153, 153, 0.83) 100%);
 }
+
 .navbar {
   background-color: #191A1B;
 }
 
 /* Hero Section */
-.about-hero {
-  height: 427px;
+section.about-hero {
+  padding-top: 140px;
   display: flex;
   align-items: center;
 }
 
-.about-hero h1,
-.about-hero p {
-  color: var(--dark);
+.about-hero h1, .about-hero p , p{
+  color: var(--light);
 }
 
 .about-contents {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: #191A1B;
+}
+
+.footer a {
+  color: var(--light);
 }
