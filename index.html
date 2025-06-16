@@ -247,20 +247,20 @@
     
   </script>
   <script>
-  //carousel interactiveness
-  const images = document.querySelectorAll('.carousel-image');
+    //carousel interactiveness
+    const images = document.querySelectorAll('.carousel-image');
 
-  images.forEach((img) => {
-    img.addEventListener('click', () => {
-      images.forEach(i => i.classList.remove('center', 'side'));
-      img.classList.add('center');
-      images.forEach(i => {
-        if (i !== img) {
-          i.classList.add('side');
-        }
+    images.forEach((img) => {
+      img.addEventListener('click', () => {
+        images.forEach(i => i.classList.remove('center', 'side'));
+        img.classList.add('center');
+        images.forEach(i => {
+          if (i !== img) {
+            i.classList.add('side');
+          }
+        });
       });
     });
-  });
 </script>
 
 </body>
