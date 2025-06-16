@@ -1,7 +1,12 @@
 @import url(global.css);
+
 body{
-    background-color: #FFF4E9;
+    background-color: var(--accent);
 }
+.navbar {
+  background-color: #191A1B;
+}
+
 /* Hero Section */
 .about-hero {
   height: 427px;
