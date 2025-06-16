@@ -11,11 +11,12 @@ body{
 
 /* Hero Section */
 section.about-hero {
-  padding-top: 140px;
-  display: flex;
-  align-items: center;
+  padding-top: 120px;
 }
 
+section.container {
+  padding-bottom: 120px;;
+}
 .about-hero h1, .about-hero p , p{
   color: var(--light);
 }
