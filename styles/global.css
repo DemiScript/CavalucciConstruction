@@ -132,3 +132,57 @@ section.hero {
   color: #2C2C2C;
   transition: all 0.3s ease-in-out;
 }
+
+/* Footer Styles */
+/* Footer Style */
+.footer {
+  border-top: 1px solid #ddd;
+  color: #333;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer a:hover {
+  color: #550000;
+}
+
+/* Footer Nav (Left) */
+.footer-nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  list-style: none;
+}
+
+.footer-nav ul li a {
+  font-size: 1rem;
+  padding: 0.5rem;
+  display: block;
+}
+
+.footer-logo img {
+  max-width: 100%;
+}
+
+/* Footer Right Links */
+.footer-right ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-right ul li {
+  list-style: none;
+}
+
+.footer-right ul li a {
+  font-size: 1rem;
+  padding: 0.5rem;
+  display: block;
+}
