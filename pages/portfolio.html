@@ -81,22 +81,52 @@
     <section class="container gallery-section">
       <div class="row row-cols-3 row-cols-md-2">
         <div class="col-12 col-md-6 col-lg-4">
-          <img src="../images/gallery/a-1.jpg" alt="Gallery Image 1" class="gallery-image">
+          <img 
+            src="../images/gallery/a-1.jpg" 
+            alt="Gallery Image 1" 
+            class="gallery-image"
+            description="Room expansion and deck construction"
+            location="Montvale, NJ">
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <img src="../images/gallery/b-1.jpg" alt="Gallery Image 2" class="gallery-image">
+          <img 
+            src="../images/gallery/b-1.jpg" 
+            alt="Gallery Image 2" 
+            class="gallery-image"
+            description="Front porch expansion project"
+            location="Montclair, NJ">
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <img src="../images/gallery/c-1.JPG" alt="Gallery Image 3" class="gallery-image">
+          <img 
+            src="../images/gallery/c-1.JPG" 
+            alt="Gallery Image 3" 
+            class="gallery-image"
+            description="House extension and circular window"
+            location="Old Tappan, NJ">
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <img src="../images/gallery/d-1.jpg" alt="Gallery Image 4" class="gallery-image">
+          <img 
+            src="../images/gallery/d-1.jpg" 
+            alt="Gallery Image 4" 
+            class="gallery-image"
+            description="Home renovation with wheelchair accessibility"
+            location="Park Ridge, NJ">
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <img src="../images/gallery/e-1.jpg" alt="Gallery Image 5" class="gallery-image">
+          <img 
+            src="../images/gallery/e-1.jpg" 
+            alt="Gallery Image 5" 
+            class="gallery-image"
+            description="Kitchen renovation with open concept"
+            location="Morristown, NJ">
         </div>
         <div class="col-12 col-md-6 col-lg-4">
-          <img src="../images/gallery/f-1.jpg" alt="Gallery Image 6" class="gallery-image">
+          <img 
+            src="../images/gallery/f-1.jpg" 
+            alt="Gallery Image 6" 
+            class="gallery-image"
+            description="Porch construction and siding"
+            location="Park Ridge, NJ">
         </div>
       </div>
     </section>
@@ -163,16 +193,29 @@
   const modalImg = document.getElementById("modalImg");
   const images = document.querySelectorAll(".gallery-image");
 
+  //get the modal footer elements
+  const modalDescription = document.querySelector(".modal-description");
+  const modalTitle = document.querySelector(".modal-title");
+
   images.forEach(img => {
     img.addEventListener("click", () => {
       modal.style.display = "flex";
       modalImg.src = img.src;
+    
+      // Get data attributes from the clicked image
+      const description = img.getAttribute("description");
+      const location = img.getAttribute("location");
+
+      // Update modal footer with data attributes
+      modalDescription.textContent = description;
+      modalTitle.textContent = location;
     });
   });
-
+  
   modal.addEventListener("click", () => {
     modal.style.display = "none";
   });
+
 </script>
 <script>
   document.getElementById('current-year').textContent = new Date().getFullYear();
