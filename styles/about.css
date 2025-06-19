@@ -1,0 +1,38 @@
+@import url(global.css);
+
+body{
+  background: #550000;
+  background: linear-gradient(351deg, rgba(85, 0, 0, 1) 27%, rgba(153, 153, 153, 1) 54%, rgba(25, 26, 27, 1) 96%);
+}
+
+.navbar {
+  background-color: none;
+}
+
+/* Hero Section */
+section.about-hero {
+  padding-top: 120px;
+}
+
+section.container {
+  padding-bottom: 120px;;
+}
+.about-hero h1, .about-hero p , p{
+  color: var(--light);
+}
+
+.about-contents {
+  display: flex;
+  flex-direction: column;
+}
+/* Footer Styles */
+footer {
+  background-color: #191A1B; 
+  color: var(--light);
+  border-color: #191A1B !important;
+}
+
+/* Footer Links */
+footer a {
+  color: var(--light) !important;
+}
