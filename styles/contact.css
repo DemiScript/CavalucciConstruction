@@ -58,3 +58,16 @@ form .form-control {
 .transparent-red {
   background-color: transparent;
 }
+
+.pop-up {
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pop-up:hover {
+  transform: scale(1.05) translateY(0);
+  text-decoration: underline;
+  text-underline-offset: 5px; 
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}

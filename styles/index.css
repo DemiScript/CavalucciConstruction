@@ -50,11 +50,9 @@ p > span {
 
 .pop-up {
   position: relative;
-  /* transform: translateY(35px); */
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Show pop-up when hovering over any carousel image */
 .pop-up:hover {
   transform: scale(1.05) translateY(0);
   text-decoration: underline;
