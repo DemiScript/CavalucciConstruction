@@ -164,6 +164,11 @@ section.hero {
   color: #fff;
 }
 
+/* Hero Text Shadow */
+.shadow-text{
+  text-shadow: 0 0 15px rgba(20, 20, 20, 0.705);
+}
+
 /* Footer Style */
 .footer {
   border-top: 1px solid #ddd;

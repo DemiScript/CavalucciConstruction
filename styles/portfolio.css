@@ -24,10 +24,6 @@
   color: var(--light);
 }
 
-.shadow-text{
-  text-shadow: 0 0 15px rgba(20, 20, 20, 0.705);
-}
-
 /* Portfolio Section */
 .gallery-section, .gallery-image{
   padding-top: 16px;
