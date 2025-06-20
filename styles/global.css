@@ -228,6 +228,10 @@ section.hero {
   flex-shrink: 0;
 }
 
+#current-year {
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   .footer .container {
     flex-direction: column;
