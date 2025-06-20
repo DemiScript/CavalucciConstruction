@@ -231,11 +231,17 @@
         </ul>
       </div>
     </div>
+    <div class="container text-center py-3">
+      <small>&copy; <span id="current-year"></span> Cavalucci Construction. All rights reserved.</small>
+      <br>
+      <small>Developed By DemiScript Solutions</small>
+    </div>
   </footer>
   
   
   <!-- JavaScript -->
   <script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
   const navbar = document.querySelector('.navbar');
   const collapse = document.getElementById('navbarSupportedContent');
 
