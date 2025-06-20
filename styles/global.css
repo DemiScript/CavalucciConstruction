@@ -85,6 +85,10 @@ a.nav-link:hover {
   outline: none;
   box-shadow: 0 0 0 3px white;
 }
+.navbar.clicked {
+  background-color: #191A1B !important;
+  transition: none !important;
+}
 /* Accent Color */
 .accent {
   color: var(--accent);

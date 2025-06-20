@@ -147,15 +147,31 @@
 
   <!-- Optional JS for Navbar Scroll Effect -->
   <script>
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-  </script>
+  const navbar = document.querySelector('.navbar');
+  const collapse = document.getElementById('navbarSupportedContent');
+
+  // Handle scroll: add/remove "scrolled" class based on scroll position or menu open
+  function updateNavbar() {
+    if (window.scrollY > 50 || collapse.classList.contains('show')) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateNavbar);
+
+  collapse.addEventListener('shown.bs.collapse', () => {
+    navbar.classList.add('clicked'); // immediate bg, no transition
+  });
+
+  collapse.addEventListener('hidden.bs.collapse', () => {
+    navbar.classList.remove('clicked'); 
+    updateNavbar(); 
+  });
+
+  updateNavbar();
+</script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
