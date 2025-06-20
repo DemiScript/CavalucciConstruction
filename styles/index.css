@@ -24,31 +24,57 @@ p > span {
   gap: 30px;
 }
 
-.carousel-image {
+.carousel-image-center, .carousel-image-side {
   border-radius: 10px;
   object-fit: cover;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 
-.carousel-image.center {
+.carousel-image-center {
   width: 580px;
   opacity: 1;
-  filter: none;
 }
 
-.carousel-image.side {
+.carousel-image-side {
   width: 359px;
   opacity: 0.6;
-  filter: brightness(1.2) grayscale(0.1);
 }
 
-.carousel-image.side:hover, .carousel-image.center:hover {
+.carousel-image-side:hover, .carousel-image-center:hover {
   transform: scale(1.05);
   opacity: 1;
-  filter: none;
+}
+
+@media (max-width: 992px) {
+  .carousel-image-center {
+    width: 70vw;
+  }
+
+  .carousel-image-side {
+    width: 70vw;
+    opacity: 1;
+  }
+
+  .carousel-track {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-track {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-image.center,
+  .carousel-image.side {
+    width: 90vw;
+  }
 }
 
 .pop-up {
+  margin-top: 16px;
   position: relative;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -206,7 +232,7 @@ p > span {
 
 /* Media Section, Section 5 */
 .section-5 {
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .video-wrapper {
@@ -243,29 +269,3 @@ p > span {
 }
 
 
-@media (max-width: 992px) {
-  .carousel-image.center {
-    width: 70vw;
-  }
-
-  .carousel-image.side {
-    width: 40vw;
-  }
-
-  .carousel-track {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-track {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .carousel-image.center,
-  .carousel-image.side {
-    width: 90vw;
-  }
-}
