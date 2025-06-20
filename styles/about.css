@@ -36,3 +36,29 @@ footer {
 footer a {
   color: var(--light) !important;
 }
+@media (max-width: 768px) {
+  .about-contents {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* image position is right after hero section*/
+  .row.row-cols-md-1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row.row-cols-md-1 > div:nth-child(2) { 
+    order: -1;  
+    margin-bottom: 2rem; 
+  }
+  /*center align img*/
+  .row.row-cols-md-1 > div:nth-child(2) img {
+    margin: 0.5rem auto;
+    display: block;
+    max-width: 90%;
+    height: auto;
+  }
+  
+}
