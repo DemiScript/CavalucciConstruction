@@ -56,6 +56,10 @@ p {
 }
 
 /* Navigation Bar & When Page Active Show Underline & Effect when Link is hovered over */
+.navbar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 a.nav-link {
   font-family: var(--font-family-alt);
   font-size: 20px;
@@ -67,26 +71,26 @@ a.active {
   text-decoration: underline;
   text-underline-offset: 5px; 
   text-decoration-thickness: 2px;
-  color: var(--light) !important;
+  color: var(--dark) !important;
 }
 a.nav-link:hover {
-  color: var(--light); 
+  color: var(--accent); 
   text-decoration: underline;
   text-underline-offset: 5px; 
   text-decoration-thickness: 2px;
 }
-.navbar-toggler-icon {
+/* .navbar-toggler-icon {
   filter: invert(1);
-}
+} */
 .navbar-toggler {
-  border: 1px solid white;
+  border: 1px solid var(--accent);
 }
 .navbar-toggler:focus {
   outline: none;
-  box-shadow: 0 0 0 3px white;
+  box-shadow: 0 0 0 3px var(--accent);
 }
 .navbar.clicked {
-  background-color: #191A1B !important;
+  background-color: #fff !important;
   transition: none !important;
 }
 /* Accent Color */
@@ -116,11 +120,11 @@ section.hero {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent; 
+  background: #fff; 
 }
-.navbar.scrolled {
+/* .navbar.scrolled {
   background-color: #191A1B;
-}
+} */
 
 /* Buttons */
 .transparent-white, .transparent-red {
