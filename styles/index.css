@@ -5,10 +5,6 @@ body {
 }
 
 /* Section 2  */
-.section-2 {
-  padding-top: 140px;
-  text-align: center;
-}
 .section-2 h1, .section-4 h1 {
   color: var(--d-blue);
 }
@@ -74,7 +70,7 @@ p > span {
 }
 
 .pop-up {
-  margin-top: 16px;
+  margin-top: 24px;
   position: relative;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -87,9 +83,11 @@ p > span {
   cursor: pointer;
 }
 
-/* Section 3 */
 .section-3 {
-  padding-top: 140px;
+  background-image: url('../images/serv-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Services Card */
@@ -107,7 +105,7 @@ p > span {
   max-width: 380px;
   border-radius: 35px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.137);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.308);
   transition: transform 0.3s ease;
   margin-bottom: 24px;
 }
@@ -203,8 +201,7 @@ p > span {
   align-items: center;
   text-align: center;
   max-width: 900px;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  margin-bottom: 150px;
 }
 
 .icon-text-group {
@@ -231,10 +228,6 @@ p > span {
 }
 
 /* Media Section, Section 5 */
-.section-5 {
-  padding-top: 100px;
-}
-
 .video-wrapper {
   align-items: center;
 }
