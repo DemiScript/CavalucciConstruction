@@ -58,12 +58,12 @@ p {
 /* Navigation Bar & When Page Active Show Underline & Effect when Link is hovered over */
 .navbar {
   transition: background-color 0.3s ease;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: #ffffffe7;
+  background: #ffffff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
