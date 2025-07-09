@@ -1,19 +1,18 @@
 @import url(global.css);
 
-/* About Hero Section */
-.about-hero-content {
+/* About Banner */
+/* section.hero{
+    background-image: url('../images/hero-temp.png');
+} */
+.about-content {
   display: flex;
   flex-direction: column;
+  max-width: 1000px;  
 }
 
-.about-hero-content h1,.about-hero-content p{
+/* .about-content h1,.about-content p{
   color: var(--light);
-}
-
-.about-contents {
-  display: flex;
-  flex-direction: column;
-}
+} */
 
 h6 {
   color: var(--accent);

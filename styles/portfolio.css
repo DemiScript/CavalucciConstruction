@@ -4,18 +4,27 @@ body{
   background: #FFFFFF;
   background: linear-gradient(24deg,rgb(12, 12, 12) 0%, rgb(13 , 14, 33, 100) 50%, rgb(209, 207, 207) 150%);
 }
-/* Portfolio Banner */
-.portfolio-hero-content {
+
+/* About Banner */
+/* section.hero{
+    background-image: url('../images/hero-temp.png');
+} */
+
+.portfolio-content {
   display: flex;
   flex-direction: column;
+  max-width: 1000px;  
 }
 
-.portfolio-contents h1, .portfolio-contents p {
+/* .portfolio-content h1,.portfolio-content p{
   color: var(--light);
+} */
+
+.dark-bg {
+  background-color: rgba(34, 33, 33, 0.373);
 }
 
-
-/* Portfolio Section */
+/* Gallery Section */
 .gallery-section, .gallery-image{
   padding-top: 16px;
   padding-bottom: 16px;
