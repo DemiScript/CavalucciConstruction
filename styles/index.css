@@ -4,6 +4,23 @@ body {
   background-color: #FFFFFF;
 }
 
+/* Banner Override */
+section.hero {
+  background-image: url('../images/index-hero.png');
+}
+
+.index-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 625px;
+}
+
+.index-content h1,.index-content p{
+  color: var(--light);
+}
+
 /* Section 2  */
 .section-2 h1, .section-4 h1 {
   color: var(--d-blue);
