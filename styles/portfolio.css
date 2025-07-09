@@ -5,14 +5,9 @@ body{
   background: linear-gradient(24deg,rgb(12, 12, 12) 0%, rgb(13 , 14, 33, 100) 50%, rgb(209, 207, 207) 150%);
 }
 /* Portfolio Banner */
-.portfolio-hero {
-  /* background-image: url('../images/portfolio-img.png'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
-  height: 250px;;
-  text-align: left;
-  /* height: 427px; */
+.portfolio-hero-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-contents h1, .portfolio-contents p {
