@@ -20,10 +20,6 @@ body{
   color: var(--light);
 } */
 
-.dark-bg {
-  background-color: rgba(34, 33, 33, 0.373);
-}
-
 /* Gallery Section */
 .gallery-section, .gallery-image{
   padding-top: 16px;

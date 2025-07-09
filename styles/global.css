@@ -79,14 +79,14 @@ a.nav-link {
 a.active {
   text-decoration: underline;
   text-underline-offset: 5px; 
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 3px;
   color: var(--accent) !important;
 }
 a.nav-link:hover {
   color: var(--accent); 
   text-decoration: underline;
   text-underline-offset: 5px; 
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 3px;
 }
 
 .navbar-toggler {
