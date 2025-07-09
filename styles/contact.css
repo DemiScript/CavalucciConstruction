@@ -1,26 +1,15 @@
 @import url(global.css);
 
-.contact-hero {
-  margin-top: 150px;
-  height: 250px;;
-  text-align: left;
-  
-}
-
-.bg-fun{
-  background-image: url('../images/contact-image.png'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .contact-title h1, .contact-title p, .contact-hero h1, .contact-hero p  {
   color: var(--dark);
 }
 
-.contact-contents {
-  flex-direction: column;
+.custom-bg {
+  /* background-color: rgba(246, 243, 243, 0.638); */
+  border-radius: 16px;
+  border: 1px solid rgba(52, 49, 49, 0.147);
+  /* box-shadow: 0 2px 10px rgba(36, 35, 35, 0.253); */
 }
-
 /* Contact Info Section */
 .contact-section {
   background: var(--light);
@@ -60,18 +49,4 @@ form .form-control {
 
 .transparent-red {
   background-color: transparent;
-}
-
-.pop-up a {
-  color:var(--light);
-  position: relative;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.pop-up:hover {
-  transform: scale(1.05) translateY(0);
-  text-decoration: underline;
-  text-underline-offset: 5px; 
-  text-decoration-thickness: 2px;
-  cursor: pointer;
 }
