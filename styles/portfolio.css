@@ -100,6 +100,33 @@ body{
   text-transform: uppercase;
 }
 
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 5;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.modal-arrow.left {
+  left: 20px;
+}
+
+.modal-arrow.right {
+  right: 20px;
+}
+
+.modal-arrow:hover {
+  background: #550000;
+  color: #fff;
+}
+
 footer a {
   color: var(--light) !important;
 }

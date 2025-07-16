@@ -84,6 +84,8 @@
             src="../images/gallery/compressed-imgs/a-1.jpg" 
             alt="Gallery Image 1" 
             class="gallery-image"
+            data-prefix="a"
+            data-count="3"
             description="Room expansion and deck construction"
             location="Montvale, NJ">
       </div>
@@ -92,22 +94,28 @@
             src="../images/gallery/compressed-imgs/b-1.jpg" 
             alt="Gallery Image 2" 
             class="gallery-image"
+            data-prefix="b"
+            data-count="3"
             description="Front porch expansion project"
             location="Montclair, NJ">
       </div>
       <div class="col-12 col-md-6 col-lg-4">
         <img 
-            src="../images/gallery/compressed-imgs/c-1.JPG" 
+            src="../images/gallery/compressed-imgs/c-1.jpg" 
             alt="Gallery Image 3" 
             class="gallery-image"
-            description="House extension and circular window"
-            location="Old Tappan, NJ">
+            data-prefix="c"
+            data-count="3"
+            description="Bathroom renovation with modern fixtures"
+            location="Montvale, NJ">
       </div>
       <div class="col-12 col-md-6 col-lg-4">
         <img 
             src="../images/gallery/compressed-imgs/d-1.jpg" 
             alt="Gallery Image 4" 
             class="gallery-image"
+            data-prefix="d"
+            data-count="2"
             description="Home renovation with wheelchair accessibility"
             location="Park Ridge, NJ">
       </div>
@@ -116,6 +124,8 @@
             src="../images/gallery/compressed-imgs/e-1.jpg" 
             alt="Gallery Image 5" 
             class="gallery-image"
+            data-prefix="e"
+            data-count="3"
             description="Kitchen renovation with open concept"
             location="Morristown, NJ">
       </div>
@@ -124,6 +134,8 @@
             src="../images/gallery/compressed-imgs/f-1.jpg" 
             alt="Gallery Image 6" 
             class="gallery-image"
+            data-prefix="f"
+            data-count="2"
             description="Porch construction and siding"
             location="Park Ridge, NJ">
       </div>
@@ -133,9 +145,11 @@
   <div class="image-modal align-items-center" id="imageModal">
     
     <div class="modal-content-wrapper justify-content-center">
+      <button class="modal-arrow left">&#10094;</button>
       <img src="" alt="Enlarged Image" id="modalImg">
+      <button class="modal-arrow right">&#10095;</button>
       <div class="modal-footer-overlay">
-        <p class="modal-description">A short description about the project or image goes here.</p>
+        <p class="modal-description">Description</p>
         <h2 class="modal-title">Location</h2>
       </div>
     </div>
@@ -181,31 +195,85 @@
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImg");
-    const images = document.querySelectorAll(".gallery-image");
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalDesc = document.querySelector('.modal-description');
+    const modalTitle = document.querySelector('.modal-title');
+    const leftArrow = document.querySelector('.modal-arrow.left');
+    const rightArrow = document.querySelector('.modal-arrow.right');
 
-    //get the modal footer elements
-    const modalDescription = document.querySelector(".modal-description");
-    const modalTitle = document.querySelector(".modal-title");
+    let currentPrefix = '';
+    let currentIndex = 0;
+    let imageCount = 0;
 
-    images.forEach(img => {
-      img.addEventListener("click", () => {
-        modal.style.display = "flex";
-        modalImg.src = img.src;
-      
-        // Get data attributes from the clicked image
-        const description = img.getAttribute("description");
-        const location = img.getAttribute("location");
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        const src = img.src;
+        const prefix = img.dataset.prefix;
+        const count = parseInt(img.dataset.count);
 
-        // Update modal footer with data attributes
-        modalDescription.textContent = description;
-        modalTitle.textContent = location;
+        const match = src.match(/-(\d+)\.jpg$/);
+        const index = match ? parseInt(match[1]) : 0;
+
+        currentPrefix = prefix;
+        currentIndex = index;
+        imageCount = count;
+
+        modalImg.src = `../images/gallery/compressed-imgs/${currentPrefix}-${currentIndex}.jpg`;
+        modalDesc.textContent = img.getAttribute('description');
+        modalTitle.textContent = img.getAttribute('location');
+        modal.style.display = 'flex';
       });
     });
-  
-    modal.addEventListener("click", () => {
-      modal.style.display = "none";
+
+    leftArrow.addEventListener('click', () => {
+      if (!currentPrefix) return;
+      currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+      updateModalImage();
     });
+
+    rightArrow.addEventListener('click', () => {
+      if (!currentPrefix) return;
+      currentIndex = (currentIndex + 1) % imageCount;
+      updateModalImage();
+    });
+
+    function updateModalImage() {
+      modalImg.src = `../images/gallery/compressed-imgs/${currentPrefix}-${currentIndex}.jpg`;
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // const modal = document.getElementById("imageModal");
+    // const modalImg = document.getElementById("modalImg");
+    // const images = document.querySelectorAll(".gallery-image");
+
+    // //get the modal footer elements
+    // const modalDescription = document.querySelector(".modal-description");
+    // const modalTitle = document.querySelector(".modal-title");
+
+    // images.forEach(img => {
+    //   img.addEventListener("click", () => {
+    //     modal.style.display = "flex";
+    //     modalImg.src = img.src;
+      
+    //     // Get data attributes from the clicked image
+    //     const description = img.getAttribute("description");
+    //     const location = img.getAttribute("location");
+
+    //     // Update modal footer with data attributes
+    //     modalDescription.textContent = description;
+    //     modalTitle.textContent = location;
+    //   });
+    // });
+  
+    // modal.addEventListener("click", () => {
+    //   modal.style.display = "none";
+    // });
   </script>
 </body>
