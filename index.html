@@ -46,8 +46,13 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/about.html">About</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="pages/about.html" id="aboutDropdown" role="button" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="pages/testimonial.html">Testimonials</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
@@ -60,6 +65,32 @@
             </li>
           </ul>
         </div>
+        <script>
+          // Show dropdown on hover
+          document.addEventListener('DOMContentLoaded', function () {
+            var aboutNav = document.querySelector('.nav-item.dropdown');
+            var dropdownMenu = aboutNav.querySelector('.dropdown-menu');
+            aboutNav.addEventListener('mouseenter', function () {
+              dropdownMenu.classList.add('show');
+              aboutNav.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'true');
+            });
+            aboutNav.addEventListener('mouseleave', function () {
+              dropdownMenu.classList.remove('show');
+              aboutNav.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+            });
+          });
+        </script>
+        <style>
+          /* Ensure dropdown works on hover for desktop */
+          @media (min-width: 992px) {
+            .navbar-nav .dropdown-menu {
+              margin-top: 0;
+            }
+            .navbar-nav .dropdown-menu.show {
+              display: block;
+            }
+          }
+        </style>
       </div>
     </nav>
 
