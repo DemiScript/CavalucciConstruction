@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cavalucci Construction</title>
+    <title>Home | Cavalucci Construction</title>
   
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/hammer.ico" />
@@ -16,8 +16,8 @@
     <!-- Open Graph / Social Media Preview -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.cavalucci.com/" />
-    <meta property="og:title" content="Cavalucci Construction | Building Quality Homes Since 1987" />
-    <meta property="og:description" content="Proudly serving Bergen County and the Tri-State area, Cavalucci Construction delivers professional home building and remodeling with unmatched craftsmanship." />
+    <meta property="og:title" content="Cavalucci Construction | Home Builders in Northern NJ Since 1987" />
+    <meta property="og:description" content="Cavalucci Construction specializes in home improvement and new home construction across Northern Bergen County and the Tri-State area. Building with integrity, quality, and expertise since 1987" />
     <meta property="og:image" content="https://www.cavalucci.com/images/logo.png" />
   
     <!-- Bootstrap & CSS -->
@@ -26,11 +26,11 @@
     <link href="styles/index.css" rel="stylesheet">
   </head>
   
-  <body id="main">
+  <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="#">
             <img src="images/logo.png" alt="Cavalucci Construction Logo" width="200" height="102" class="d-inline-block align-text-top">
         </a>
     
@@ -46,8 +46,13 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/about.html">About</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="pages/about.html" id="aboutDropdown" role="button" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                <li><a class="dropdown-item" href="pages/testimonial.html">Testimonials</a></li>
+              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
@@ -60,107 +65,130 @@
             </li>
           </ul>
         </div>
+        <script>
+          // Show dropdown on hover
+          document.addEventListener('DOMContentLoaded', function () {
+            var aboutNav = document.querySelector('.nav-item.dropdown');
+            var dropdownMenu = aboutNav.querySelector('.dropdown-menu');
+            aboutNav.addEventListener('mouseenter', function () {
+              dropdownMenu.classList.add('show');
+              aboutNav.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'true');
+            });
+            aboutNav.addEventListener('mouseleave', function () {
+              dropdownMenu.classList.remove('show');
+              aboutNav.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+            });
+          });
+        </script>
+        <style>
+          /* Ensure dropdown works on hover for desktop */
+          @media (min-width: 992px) {
+            .navbar-nav .dropdown-menu {
+              margin-top: 0;
+            }
+            .navbar-nav .dropdown-menu.show {
+              display: block;
+            }
+          }
+        </style>
       </div>
     </nav>
 
   <!-- Hero Section -->
   <section class="hero d-flex align-items-center">  
-  <div class="container hero-content">
-    <h1 class="py-2">Home Renovations 
-      <br>Done<span class="h1 accent"> Right</span>
-    </h1>
-    <p class="py-2">High-end transformations built with care, skill, and precision. For homeowners who expect more — and get it.</p>
-    <a href="pages/contact.html" class="transparent-white">Get Started</a>
-  </div>
+    <div class="container index-content gap-3">
+      <h1 class="shadow-text">Home Renovations 
+        <br>Done<span class="h1 accent"> Right</span>
+      </h1>
+      <p>High-end transformations built with care, skill, and precision. For homeowners who expect more — and get it.</p>
+      <a href="pages/contact.html" class="transparent-white">Get Started</a>
+    </div>
   </section>
    
-  <section class="container section-2">
-    <h1 class="py-2">Professional <span class="h1 accent">Home <br> Improvement Contractor</span> in NJ</h1>
+  <section class="container section-2 custom-margin text-center">
+    <h1 class="py-2">Professional <span class="h1 accent">Home <br> Improvement Contractor</span></h1>
     <p class="py-2">We manage every detail so you don’t have to. Our process is backed by over <span>three decades</span> of experience and our results speak for themselves. When you work with us, you get a trusted partner who delivers peace of mind and stunning results.</p>
 
     <!-- Carousel -->
     <div class="carousel-track">
-      <img src="images/carousel/1-bathrooms.png" class="carousel-image side" alt="Bathrooms">
-      <img src="images/carousel/2-exteriors.png" class="carousel-image center" alt="Exteriors">
-      <img src="images/carousel/3-kitchens.png" class="carousel-image side" alt="Kitchens">
+      <img src="images/carousel/1-bathrooms.png" class="carousel-image-side" alt="Bathrooms">
+      <img src="images/carousel/2-exteriors.png" class="carousel-image-center" alt="Exteriors">
+      <img src="images/carousel/3-kitchens.png" class="carousel-image-side" alt="Kitchens">
     </div>
-    <div class="pop-up">
+    <div class="pop-up d-flex justify-content-center">
       <a href="pages/portfolio.html" class="text-decoration-none" style="color:#0D1821">View Portfolio
       </a>
     </div>
-    
   </section>
 
   <!-- Services --> 
-  <section class="container section-3" id="services">
-    <h1 class="accent py-2">Our Specialties</h1>
-    <p class="py-2">From full home builds to detailed renovations, we offer residential services that are built around your goals, your space, and your lifestyle.</p>
-
-    <div class="container-fluid services-wrapper">
+  <section class="container-fluid section-3 custom-margin" id="services">
+    <div class="container services-wrapper pb-5">
+      <h1 class="accent pt-5">Our Specialties</h1>
+      <p class="py-2">From full home builds to detailed renovations, we offer residential services that are built around your goals, your space, and your lifestyle.</p>
       <div class="row row-cols-3 row-cols-md-2">
         <div class="col-12 col-md-6 col-lg-4">
           <!-- Card 1 -->
-          <div class="hover-card">
+            <div class="hover-card">
             <img src="images/services-imgs/service-01.png" alt="Project Image" class="card-img">
             <div class="card-footer">
-              <h3 class="pb-2">Residential Construction</h3>
+              <h3 class="pb-2">New Home Builder</h3>
               <!-- <p class="card-desc">A short description of the project or service goes here.</p> -->
               <a href="pages/contact.html" class="transparent-red-sm">Contact Us</a>
             </div>
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <!-- Card 2 -->
-          <div class="hover-card">
+          <div class="col-12 col-md-6 col-lg-4">
+            <!-- Card 2 -->
+            <div class="hover-card">
             <img src="images/services-imgs/service-02.png" alt="Project Image" class="card-img">
             <div class="card-footer">
-              <h3 class="pb-2">Architectural Planning</h3>
+              <h3 class="pb-2">Design/build</h3>
               <!-- <p class="card-desc">A short description of the project or service goes here.</p> -->
               <a href="pages/contact.html" class="transparent-red-sm">Contact Us</a>
             </div>
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <!-- Card 3 -->
-          <div class="hover-card">
+          <div class="col-12 col-md-6 col-lg-4">
+            <!-- Card 3 -->
+            <div class="hover-card">
             <img src="images/services-imgs/service-03.png" alt="Project Image" class="card-img">
             <div class="card-footer">
-              <h3 class="pb-2">Home renovations</h3>
+              <h3 class="pb-2">Home renovation & improvements</h3>
               <!-- <p class="card-desc">A short description of the project or service goes here.</p> -->
               <a href="pages/contact.html" class="transparent-red-sm">Contact Us</a>
             </div>
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <!-- Card 4 -->
-          <div class="hover-card">
+          <div class="col-12 col-md-6 col-lg-4">
+            <!-- Card 4 -->
+            <div class="hover-card">
             <img src="images/services-imgs/service-04.png" alt="Project Image" class="card-img">
             <div class="card-footer">
-              <h3 class="pb-2">Exterior Upgrades & Repairs</h3>
+              <h3 class="pb-2">Interior/exterior repairs</h3>
               <!-- <p class="card-desc">A short description of the project or service goes here.</p> -->
               <a href="pages/contact.html" class="transparent-red-sm">Contact Us</a>
             </div>
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <!-- Card 5 -->
-          <div class="hover-card">
+          <div class="col-12 col-md-6 col-lg-4">
+            <!-- Card 5 -->
+            <div class="hover-card">
             <img src="images/services-imgs/service-05.png" alt="Project Image" class="card-img">
             <div class="card-footer">
-              <h3 class="pb-2">LED Fixtures & Installs</h3>
-              <!-- <p class="card-desc">A short description of the project or service goes here.</p> -->
+              <h3 class="pb-2">LED to General Contractor</h3>
               <a href="pages/contact.html" class="transparent-red-sm">Contact Us</a>
             </div>
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <!-- Card 6 -->
-          <div class="hover-card">
+          <div class="col-12 col-md-6 col-lg-4">
+            
+            <div class="hover-card">
             <img src="images/services-imgs/service-06.png" alt="Project Image" class="card-img">
             <div class="card-footer">
-              <h3 class="pb-2">Custom Home Improvements</h3>
-              <!-- <p class="card-desc">A short description of the project or service goes here.</p> -->
-              <a href="pages/contact.html" class="transparent-red-sm">Contact Us</a>
+              <h3 class="pb-2">Are you an architect?</h3>
+              <!-- <p class="fs-6">We love collaborating with architects to bring their designs to life. If you have a project in mind, let's discuss how we can work together.</p> -->
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSchoBHG8RUeUHGzgucaDjyC3aLp64Pm3FGVkSYsNOpeAhl03g/viewform?usp=sharing&ouid=118004909705117260553" class="transparent-red-sm">Let's work together</a>
             </div>
           </div>
         </div>
@@ -169,7 +197,7 @@
   </section>
 
   <!-- Video/Media -->
-  <section class="container section-5">
+  <section class="container section-5 custom-margin">
     <div class="row row-cols-1 d-flex align-items-center">
       <div class="col video-wrapper">
        <iframe src="https://www.youtube.com/embed/iaiAahqaj6g?si=pOGQ0QX0ITxHEaoS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -183,8 +211,8 @@
   </section> 
 
   <!-- CTA -->
-  <section class="container section-4">
-  <h1 class="py-2">Let’s talk about your <br> home <span class="h1 accent">goals</span></h1>
+  <section class="container section-4 custom-margin gap-3">
+  <h1>Let’s talk about your <br> home <span class="h1 accent">goals</span></h1>
   <p>Whether you’re planning a major renovation or have a vision for your dream home — we’re here to help you bring it to life. Let’s start with a conversation.</p>
   <div class="icon-text-group pb-4">
     <div class="icon-text">
@@ -204,7 +232,7 @@
   </section>
   
   <!-- Footer -->
-  <footer class="footer py-4 mt-4">
+  <footer class="footer py-4 custom-margin">
     <div class="container d-flex justify-content-between align-items-center">
       <!-- Nav Links -->
       <nav class="footer-nav">
@@ -218,7 +246,7 @@
   
       <!-- Logo -->
       <div class="footer-logo text-center">
-        <a href="index.html">
+        <a href="#">
           <img src="images/logo.png" alt="Cavalucci Construction Logo" width="200">
         </a>
       </div>
@@ -231,20 +259,16 @@
         </ul>
       </div>
     </div>
+    <div class="container text-center py-3">
+      <small>&copy; <span id="current-year"></span> Cavalucci Construction. All rights reserved.</small>
+      <br>
+      <small>Developed By DemiScript Solutions</small>
+    </div>
   </footer>
-  
-  
+    
   <!-- JavaScript -->
   <script>
-    window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-    
-  </script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

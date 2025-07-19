@@ -3,26 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cavalucci Construction</title>
-  
+  <title>Portfolio | Cavalucci Construction</title>
+
   <!-- Add Icon -->
   <link rel="icon" type="image/x-icon" href="../images/hammer.ico" />
 
   <!-- Browser meta tags -->
-  <meta name="title"
-  content="Cavalucci Construction | Northern NJ Home Building & Renovation Experts" />
+  <meta name="title"content="Cavalucci Construction | Home Builders in Northern NJ Since 1987" />
+  <meta name="description" content="Cavalucci Construction specializes in home improvement and new home construction across Northern Bergen County and the Tri-State area. Building with integrity, quality, and expertise since 1987." />
+  <meta name="keywords" content="Cavalucci Construction, home builders NJ, Bergen County contractor, new home construction, remodeling, renovations, residential contractor, commercial construction" />
   
-  <meta name="description"
-  content="Cavalucci Construction has provided expert home improvement and new construction services in Bergen County and the Tri-State area since 1987. We build homes with integrity, craftsmanship, and trust." />
-  
-  <meta name="keywords"
-  content="Cavalucci Construction, Bergen County home builder, NJ home renovations, Tri-State area construction, new home construction, residential contractor, contractor, custom homes, home improvement NJ" />
-  
+   <!-- Open Graph / Social Media Preview -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.cavalucci.com" />
-  <meta property="og:title" content="Cavalucci Construction | Trusted Home Builders Since 1987" />
-  <meta property="og:description"
-  content="Serving Bergen County and the Tri-State area with professional, high-quality home construction and renovation services built on integrity and experience." />
+  <meta property="og:title" content="Cavalucci Construction | Home Builders in Northern NJ Since 1987" />
+  <meta property="og:description" content="Cavalucci Construction specializes in home improvement and new home construction across Northern Bergen County and the Tri-State area. Building with integrity, quality, and expertise since 1987" />
   <meta property="og:image" content="../images/logo.png" />
 
   <!-- Bootstrap Links-->
@@ -32,11 +27,11 @@
 
 </head>
 
-<body id="main">
+<body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="/index.html">
+      <a class="navbar-brand" href="../index.html">
           <img src="../images/logo.png" alt="Cavalucci Construction Logo" width="200" height="102" class="d-inline-block align-text-top">
       </a>
   
@@ -52,8 +47,13 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="../index.html">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pages/about.html">About</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" id="aboutDropdown" role="button" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+              <li><a class="dropdown-item" href="testimonial.html">Testimonials</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../index.html#services">Services</a>
@@ -69,78 +69,96 @@
     </div>
   </nav>
   
-  <!-- Top Banner Section -->
-   <section class="portfolio-hero d-flex align-items-center pt-5">
-      <div class="portfolio-contents container">
-        <h1 class="py-2">Our<span class="h1 accent"> Work</span></h1>
-        <p class="py-2">High-end transformations built with care, skill, and precision. For homeowners who expect more — and get it.</p>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="container gallery-section">
-      <div class="row row-cols-3 row-cols-md-2">
-        <div class="col-12 col-md-6 col-lg-4">
-          <img 
-        src="../images/gallery/compressed-imgs/a-1.jpg" 
-        alt="Gallery Image 1" 
-        class="gallery-image"
-        description="Room expansion and deck construction"
-        location="Montvale, NJ">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <img 
-        src="../images/gallery/compressed-imgs/b-1.jpg" 
-        alt="Gallery Image 2" 
-        class="gallery-image"
-        description="Front porch expansion project"
-        location="Montclair, NJ">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <img 
-        src="../images/gallery/compressed-imgs/c-1.JPG" 
-        alt="Gallery Image 3" 
-        class="gallery-image"
-        description="House extension and circular window"
-        location="Old Tappan, NJ">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <img 
-        src="../images/gallery/compressed-imgs/d-1.jpg" 
-        alt="Gallery Image 4" 
-        class="gallery-image"
-        description="Home renovation with wheelchair accessibility"
-        location="Park Ridge, NJ">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <img 
-        src="../images/gallery/compressed-imgs/e-1.jpg" 
-        alt="Gallery Image 5" 
-        class="gallery-image"
-        description="Kitchen renovation with open concept"
-        location="Morristown, NJ">
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <img 
-        src="../images/gallery/compressed-imgs/f-1.jpg" 
-        alt="Gallery Image 6" 
-        class="gallery-image"
-        description="Porch construction and siding"
-        location="Park Ridge, NJ">
-        </div>
-      </div>
-    </section>
-    
-    <div class="image-modal align-items-center" id="imageModal">
-      
-      <div class="modal-content-wrapper justify-content-center">
-        <img src="" alt="Enlarged Image" id="modalImg">
-        <div class="modal-footer-overlay">
-          <p class="modal-description">A short description about the project or image goes here.</p>
-          <h2 class="modal-title">Location</h2>
-        </div>
+  <!-- Portfolio Banner -->
+  <section class="hero d-flex align-items-end">  
+    <div class="container">
+      <div class="portfolio-content">
+        <h1 class="shadow-text">Previous<span class="h1 accent"> Works</span></h1>
+        <p>
+          Transformations built with care, expertise, and attention to every detail — for homeowners who value lasting quality and peace of mind.
+        </p>
       </div>
     </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="container gallery-section custom-margin">
+    <div class="row row-cols-3 row-cols-md-2">
+      <div class="col-12 col-md-6 col-lg-4">
+        <img 
+            src="../images/gallery/compressed-imgs/a-1.jpg" 
+            alt="Gallery Image 1" 
+            class="gallery-image"
+            data-prefix="a"
+            data-count="3"
+            description="Room expansion and deck construction"
+            location="Montvale, NJ">
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <img 
+            src="../images/gallery/compressed-imgs/b-1.jpg" 
+            alt="Gallery Image 2" 
+            class="gallery-image"
+            data-prefix="b"
+            data-count="3"
+            description="Front porch expansion project"
+            location="Montclair, NJ">
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <img 
+            src="../images/gallery/compressed-imgs/c-1.jpg" 
+            alt="Gallery Image 3" 
+            class="gallery-image"
+            data-prefix="c"
+            data-count="3"
+            description="Bathroom renovation with modern fixtures"
+            location="Montvale, NJ">
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <img 
+            src="../images/gallery/compressed-imgs/d-1.jpg" 
+            alt="Gallery Image 4" 
+            class="gallery-image"
+            data-prefix="d"
+            data-count="2"
+            description="Home renovation with wheelchair accessibility"
+            location="Park Ridge, NJ">
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <img 
+            src="../images/gallery/compressed-imgs/e-1.jpg" 
+            alt="Gallery Image 5" 
+            class="gallery-image"
+            data-prefix="e"
+            data-count="3"
+            description="Kitchen renovation with open concept"
+            location="Morristown, NJ">
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <img 
+            src="../images/gallery/compressed-imgs/f-1.jpg" 
+            alt="Gallery Image 6" 
+            class="gallery-image"
+            data-prefix="f"
+            data-count="2"
+            description="Porch construction and siding"
+            location="Park Ridge, NJ">
+      </div>
+    </div>
+  </section>
+    
+  <div class="image-modal align-items-center" id="imageModal">
+    
+    <div class="modal-content-wrapper justify-content-center">
+      <button class="modal-arrow left">&#10094;</button>
+      <img src="" alt="Enlarged Image" id="modalImg">
+      <button class="modal-arrow right">&#10095;</button>
+      <div class="modal-footer-overlay">
+        <p class="modal-description">Description</p>
+        <h2 class="modal-title">Location</h2>
+      </div>
+    </div>
+  </div>
 
     <!-- Footer -->
     <footer class="footer py-4 mt-4">
@@ -148,10 +166,10 @@
         <!-- Nav Links -->
         <nav class="footer-nav">
           <ul class="list-unstyled d-flex">
-            <li class="mx-3"><a href="../pages/about.html">About</a></li>
+            <li class="mx-3"><a href="about.html">About</a></li>
             <li class="mx-3"><a href="../index.html#services">Services</a></li>
-            <li class="mx-3"><a href="../pages/portfolio.html">Portfolio</a></li>
-            <li class="mx-3"><a href="../pages/contact.html">Contact</a></li>
+            <li class="mx-3"><a href="portfolio.html">Portfolio</a></li>
+            <li class="mx-3"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
     
@@ -177,47 +195,89 @@
       </div> 
     </footer>
 
-<!-- JavaScript -->
-<!-- Nav Bar Scrolling -->
-<script>
-  window.addEventListener('scroll', function () {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalDesc = document.querySelector('.modal-description');
+    const modalTitle = document.querySelector('.modal-title');
+    const leftArrow = document.querySelector('.modal-arrow.left');
+    const rightArrow = document.querySelector('.modal-arrow.right');
+
+    let currentPrefix = '';
+    let currentIndex = 0;
+    let imageCount = 0;
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        const src = img.src;
+        const prefix = img.dataset.prefix;
+        const count = parseInt(img.dataset.count);
+
+        const match = src.match(/-(\d+)\.jpg$/);
+        const index = match ? parseInt(match[1]) : 0;
+
+        currentPrefix = prefix;
+        currentIndex = index;
+        imageCount = count;
+
+        modalImg.src = `../images/gallery/compressed-imgs/${currentPrefix}-${currentIndex}.jpg`;
+        modalDesc.textContent = img.getAttribute('description');
+        modalTitle.textContent = img.getAttribute('location');
+        modal.style.display = 'flex';
+      });
+    });
+
+    leftArrow.addEventListener('click', () => {
+      if (!currentPrefix) return;
+      currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+      updateModalImage();
+    });
+
+    rightArrow.addEventListener('click', () => {
+      if (!currentPrefix) return;
+      currentIndex = (currentIndex + 1) % imageCount;
+      updateModalImage();
+    });
+
+    function updateModalImage() {
+      modalImg.src = `../images/gallery/compressed-imgs/${currentPrefix}-${currentIndex}.jpg`;
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
       }
     });
 
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
-  const images = document.querySelectorAll(".gallery-image");
+    // const modal = document.getElementById("imageModal");
+    // const modalImg = document.getElementById("modalImg");
+    // const images = document.querySelectorAll(".gallery-image");
 
-  //get the modal footer elements
-  const modalDescription = document.querySelector(".modal-description");
-  const modalTitle = document.querySelector(".modal-title");
+    // //get the modal footer elements
+    // const modalDescription = document.querySelector(".modal-description");
+    // const modalTitle = document.querySelector(".modal-title");
 
-  images.forEach(img => {
-    img.addEventListener("click", () => {
-      modal.style.display = "flex";
-      modalImg.src = img.src;
-    
-      // Get data attributes from the clicked image
-      const description = img.getAttribute("description");
-      const location = img.getAttribute("location");
+    // images.forEach(img => {
+    //   img.addEventListener("click", () => {
+    //     modal.style.display = "flex";
+    //     modalImg.src = img.src;
+      
+    //     // Get data attributes from the clicked image
+    //     const description = img.getAttribute("description");
+    //     const location = img.getAttribute("location");
 
-      // Update modal footer with data attributes
-      modalDescription.textContent = description;
-      modalTitle.textContent = location;
-    });
-  });
+    //     // Update modal footer with data attributes
+    //     modalDescription.textContent = description;
+    //     modalTitle.textContent = location;
+    //   });
+    // });
   
-  modal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-</script>
-<script>
-  document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
+    // modal.addEventListener("click", () => {
+    //   modal.style.display = "none";
+    // });
+  </script>
 </body>

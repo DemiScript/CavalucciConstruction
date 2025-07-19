@@ -1,29 +1,26 @@
 @import url(global.css);
 
-/* Portfolio Banner */
-.portfolio-hero {
-  background-image: url('../images/portfolio-img.png'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: left;
-  height: 427px;
-  
+body{
+  background: #FFFFFF;
+  background: linear-gradient(24deg,rgb(12, 12, 12) 0%, rgb(13 , 14, 33, 100) 50%, rgb(209, 207, 207) 150%);
 }
 
-.portfolio-contents h1, .portfolio-contents p {
-  color: var(--light);
-}
+/* About Banner */
+/* section.hero{
+    background-image: url('../images/hero-temp.png');
+} */
 
-.contact-contents {
+.portfolio-content {
   display: flex;
   flex-direction: column;
-}
-.contact-hero h1, .contact-hero p {
-  color: var(--light);
+  max-width: 1000px;  
 }
 
-/* Section 6 Portfolio */
+/* .portfolio-content h1,.portfolio-content p{
+  color: var(--light);
+} */
+
+/* Gallery Section */
 .gallery-section, .gallery-image{
   padding-top: 16px;
   padding-bottom: 16px;
@@ -103,3 +100,33 @@
   text-transform: uppercase;
 }
 
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 5;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.modal-arrow.left {
+  left: 20px;
+}
+
+.modal-arrow.right {
+  right: 20px;
+}
+
+.modal-arrow:hover {
+  background: #550000;
+  color: #fff;
+}
+
+footer a {
+  color: var(--light) !important;
+}
