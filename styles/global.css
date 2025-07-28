@@ -88,6 +88,10 @@ a.nav-link:hover {
   text-underline-offset: 5px; 
   text-decoration-thickness: 3px;
 }
+.navbar-brand img {
+  width: 140%;
+  height: auto;
+}
 
 .navbar-toggler {
   border: 1px solid var(--accent);
