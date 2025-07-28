@@ -126,7 +126,7 @@ section.hero {
 }
 
 /* Buttons */
-.transparent-white, .transparent-red {
+.transparent-white, .transparent-red, .red, .white {
   /* text properties */
   color: var(--light);
   text-transform: uppercase;
@@ -155,6 +155,26 @@ section.hero {
   text-decoration: none;
 }
 
+.red{
+  /* button properties */
+  background-color: var(--accent);
+  color: var(--light);
+  border: 3px solid var(--accent);
+
+} 
+.white {
+  /* button properties */
+  background-color: var(--light);
+  color: #2C2C2C;
+}
+
+.red:hover, .white:hover {
+  background-color: var(--dark);
+  border: 3px solid var(--dark);
+  color: var(--light);
+  transition: all 0.3s ease-in-out;
+}
+
 .transparent-white:hover {
   background-color: var(--light);
   color: #2C2C2C;
@@ -173,7 +193,7 @@ section.hero {
 }
 
 .custom-margin{
-  margin-top: 112px;
+  margin-top: 200px;
 }
 
 @media (max-width: 685px) {
