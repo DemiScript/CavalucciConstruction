@@ -5,14 +5,14 @@
     background-image: url('../images/hero-temp.png');
 } */
 .about-content {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   max-width: 1000px;  
 }
 
-/* .about-content h1,.about-content p{
+.about-content h1,.about-content p{
   color: var(--light);
-} */
+}
 
 h6 {
   color: var(--accent);
@@ -20,15 +20,10 @@ h6 {
   font-weight: 700;
 }
 
-.idk {
-  border-radius: 65px;
-  padding: 8px;
-}
-
-.idk:hover {
+/* .idk:hover {
   transition: box-shadow 0.3s cubic-bezier(0.6, 0, 0.2, 1), border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.25), 0 1.5px 6px 0 rgba(0, 0, 0, 0.15);
-}
+} */
 
 .about-ellipse {
   width: 100px;
