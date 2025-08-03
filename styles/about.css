@@ -30,6 +30,14 @@ h6 {
   }
 }
 
+.underline-hover {
+  text-decoration: none;
+}
+.underline-hover:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
 #circle-1 {
   background-image: url('../images/about-page/about-1.png');
 }
