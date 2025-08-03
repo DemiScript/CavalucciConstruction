@@ -71,7 +71,7 @@ p {
 
 a.nav-link {
   font-family: var(--font-family-alt);
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--dark);
@@ -89,7 +89,8 @@ a.nav-link:hover {
   text-decoration-thickness: 3px;
 }
 .navbar-brand img {
-  width: 140%;
+  padding-right: 35px;
+  width: 130%;
   height: auto;
 }
 
