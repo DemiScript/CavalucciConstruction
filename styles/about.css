@@ -1,9 +1,9 @@
 @import url(global.css);
 
-/* About Banner */
-/* section.hero{
-    background-image: url('../images/hero-temp.png');
-} */
+/* Banner Override */
+section.hero {
+  background-image: url('../images/about-banner.jpg');
+}
 .about-content {
   /* display: flex;
   flex-direction: column; */
