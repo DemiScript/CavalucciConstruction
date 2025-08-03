@@ -111,6 +111,7 @@
             </div>
           </a>
         </div>
+        <!-- <embed src="../resources/Professional-Testimonials.pdf" width="1000" height="575" type="application/pdf"> -->
         <div class="h-100 idk">
           <a href="testimonial.html" class="d-flex align-items-center underline-hover">
             <div class="about-ellipse me-3 flex-shrink-0 hover" id="circle-6"></div>
@@ -198,6 +199,14 @@
     </div>  
   </footer>
 
+  <!-- Modal -->
+  <div id="pdfModal" class="pdf-modal px-xs-4">
+    <div class="pdf-modal-content">
+      <span class="close-modal text-end pe-3">&times;</span>
+      <embed id="pdfModal" src="../resources/Collaborators-Reviews.pdf" type="application/pdf" width="100%" height="100%">
+    </div>
+  </div>
+
   <!-- JavaScript (Bootstrap) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script>
@@ -222,6 +231,25 @@
       });
     });
 
+    // Modal JS
+    const circle6Link = document.querySelector('#circle-6').closest('a');
+    const modal = document.getElementById('pdfModal');
+    const closeModal = document.querySelector('.close-modal');
+
+    circle6Link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent navigation
+      modal.style.display = 'flex';
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
