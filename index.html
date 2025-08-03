@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="Cavalucci Construction Logo" width="200" height="102" class="d-inline-block align-text-top">
+            <img src="images/logo.png" alt="Cavalucci Construction Logo" class="d-inline-block align-text-top">
         </a>
     
         <!--Toggler-->
@@ -46,19 +46,17 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="pages/about.html" id="aboutDropdown" role="button" aria-expanded="false">
-                About
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                <li><a class="dropdown-item" href="pages/testimonial.html">Testimonials</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-nowrap" href="pages/testimonial.html">Review Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/contact.html">Contact</a>
@@ -98,31 +96,41 @@
   <section class="hero d-flex align-items-center">  
     <div class="container index-content gap-3">
       <h1 class="shadow-text">Home Renovations 
-        <br>Done<span class="h1 accent"> Right</span>
+        <br>You Can<span class="h1 accent"> Trust</span>
       </h1>
-      <p>High-end transformations built with care, skill, and precision. For homeowners who expect more — and get it.</p>
-      <a href="pages/contact.html" class="transparent-white">Get Started</a>
+      <p>Improvements built with care, skill, and precision. For homeowners who expect more — and get it.</p>
+      
+      <div class="d-grid gap-3 d-lg-flex mx-auto justify-content-center">
+          <a href="pages/testimonial.html" class="white">Read Testimonials</a>
+          <a href="pages/contact.html" class="red">Contact Us</a>
+          
+      </div>
     </div>
   </section>
    
-  <section class="container section-2 custom-margin text-center">
+  <section class="container section-2 custom-margin">
     <h1 class="py-2">Professional <span class="h1 accent">Home <br> Improvement Contractor</span></h1>
-    <p class="py-2">We manage every detail so you don’t have to. Our process is backed by over <span>three decades</span> of experience and our results speak for themselves. When you work with us, you get a trusted partner who delivers peace of mind and stunning results.</p>
-
-    <!-- Carousel -->
-    <div class="carousel-track">
-      <img src="images/carousel/1-bathrooms.png" class="carousel-image-side" alt="Bathrooms">
-      <img src="images/carousel/2-exteriors.png" class="carousel-image-center" alt="Exteriors">
-      <img src="images/carousel/3-kitchens.png" class="carousel-image-side" alt="Kitchens">
-    </div>
-    <div class="pop-up d-flex justify-content-center">
-      <a href="pages/portfolio.html" class="text-decoration-none" style="color:#0D1821">View Portfolio
-      </a>
+    <p class="pt-2"><b>Cavalucci Construction</b> is a new home construction and home
+                    improvement company serving Northern Bergen County and the
+                    Tri-State area since 1987. Whatever your needs, great or
+                    small; the project will be handled with the same professionalism
+                    and expert workmanship that is synonymous with our name. <br><br> We
+                    are continually apprised of and updated on the newest
+                    technologies and materials available today.</p>
+    <p class="pt-2"> We are dedicated to completing your project without unnecessary
+          complications or delays. As an interested client we want you to
+          know that all <b>our work is quality assured and your total
+          satisfaction is guaranteed. </b>You have our word on it!
+        </p>
+    
+    <div class="pop-up">
+        <a href="pages/portfolio.html" class="text-decoration-none" style="color:#550000">View Portfolio
+        </a>
     </div>
   </section>
-
+  <span id="services"></span>
   <!-- Services --> 
-  <section class="container-fluid section-3 custom-margin" id="services">
+  <section class="container-fluid section-3 custom-margin">
     <div class="container services-wrapper pb-5">
       <h1 class="accent pt-5">Our Specialties</h1>
       <p class="py-2">From full home builds to detailed renovations, we offer residential services that are built around your goals, your space, and your lifestyle.</p>
@@ -208,29 +216,7 @@
         <p>Click <a href="https://www.youtube.com/watch?v=iaiAahqaj6g">here</a>  to watch video.</p>
       </div>
     </div>
-  </section> 
-
-  <!-- CTA -->
-  <section class="container section-4 custom-margin gap-3">
-  <h1>Let’s talk about your <br> home <span class="h1 accent">goals</span></h1>
-  <p>Whether you’re planning a major renovation or have a vision for your dream home — we’re here to help you bring it to life. Let’s start with a conversation.</p>
-  <div class="icon-text-group pb-4">
-    <div class="icon-text">
-      <img src="images/tool-box.png" alt="Tool Box Image" class="icon">
-      <span>Professionally Managed</span>
-    </div>
-    <div class="icon-text">
-      <img src="images/shield-check.png" alt="Shield Image" class="icon">
-      <span>Licensed & Insured</span>
-    </div>
-    <div class="icon-text">
-      <img src="images/certification-check.png"alt="Certification Image" class="icon">
-      <span>Quality Guaranteed</span>
-    </div>
-  </div>
-  <a href="pages/contact.html" class="transparent-red">Contact Us Today</a>
   </section>
-  
   <!-- Footer -->
   <footer class="footer py-4 custom-margin">
     <div class="container d-flex justify-content-between align-items-center">

@@ -2,13 +2,13 @@
 
 body{
   background: #FFFFFF;
-  background: linear-gradient(24deg,rgb(12, 12, 12) 0%, rgb(13 , 14, 33, 100) 50%, rgb(209, 207, 207) 150%);
+  background: linear-gradient(24deg,rgb(60, 6, 6) 0%, rgb(255, 255, 255) 50%, rgb(255, 252, 252) 150%);
 }
 
-/* About Banner */
-/* section.hero{
-    background-image: url('../images/hero-temp.png');
-} */
+/* Banner Override */
+section.hero {
+  background-image: url('../images/portfolio-banner-min.jpg');
+}
 
 .portfolio-content {
   display: flex;
@@ -16,9 +16,9 @@ body{
   max-width: 1000px;  
 }
 
-/* .portfolio-content h1,.portfolio-content p{
+.portfolio-content h1,.portfolio-content p{
   color: var(--light);
-} */
+}
 
 /* Gallery Section */
 .gallery-section, .gallery-image{
@@ -57,6 +57,7 @@ body{
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
   justify-content: center;
   align-items: center;
 }

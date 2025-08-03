@@ -244,6 +244,15 @@ p > span {
   object-fit: contain;
 }
 
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color:rgb(255, 240, 241);
+}
+
 /* Media Section, Section 5 */
 .video-wrapper {
   align-items: center;
