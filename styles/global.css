@@ -112,9 +112,9 @@ a.nav-link:hover {
 
 /* Hero & Nav Bar Section */
 section.hero {
-  height: 795px;
+  height: 895px;
   background-image: url('../images/hero-temp.png');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
