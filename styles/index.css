@@ -9,8 +9,12 @@ section.hero {
   background-image: url('../images/index-hero.png');
 }
 
+.h3 {
+  color: var(--nav-link);
+}
+
 .index-content {
- padding: 48px;
+ padding: 0 48px;
 }
 
 h1,h2,h3,h4,h5,h6,b, p{
@@ -25,7 +29,7 @@ p > span {
   position: relative;
   top: 0;
   left: 0;
-  width: 90%;
+  width: 100%;
   aspect-ratio: 16 / 9 ;
   border: none;
 }
