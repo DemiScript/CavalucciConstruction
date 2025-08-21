@@ -13,7 +13,7 @@
 
 /* Banner Override */
 section.hero {
-  background-image: url('../images/testimonial-banner.png');
+  background-image: url('../images/testimonial-banner.jpg');
 }
 
 .testimonial-content {
@@ -21,5 +21,123 @@ section.hero {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 700px;
+  max-width: 850px;
+}
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;  
+}
+
+.portfolio-content h1,.portfolio-content p{
+  color: var(--light);
+}
+
+/* Gallery Section */
+.gallery-section, .gallery-image{
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 992px) {
+  .gallery-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Hover Effect */
+.gallery-image:hover {
+  filter: brightness(75%);
+}
+
+/* Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+
+#modalImg {
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+  object-fit: contain;
+}
+
+.modal-content-wrapper {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-footer-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.623);
+  backdrop-filter: blur(1px);
+  color: var(--d-blue);
+  padding: 16px 20px;
+  border-radius: 8px;
+  max-width: 60%;
+}
+.modal-description {
+  font-size: 16;
+}
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 5;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.modal-arrow.left {
+  left: 20px;
+}
+
+.modal-arrow.right {
+  right: 20px;
+}
+
+.modal-arrow:hover {
+  background: #550000;
+  color: #fff;
 }
