@@ -9,13 +9,13 @@ section.hero {
   background-image: url('../images/index-hero.png');
 }
 
-.h3 {
+.subtitle-2 {
   color: var(--nav-link);
 }
 
-.index-content {
- padding: 0 48px;
-}
+/* .index-content {
+ padding-right: 48px;
+} */
 
 h1,h2,h3,h4,h5,h6,b, p{
   color: var(--light);
