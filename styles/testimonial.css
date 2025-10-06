@@ -1,25 +1,41 @@
 @import url(global.css);
 
+body {
+  background-color: var(--light);
+}
 .testimonial-content h1, .testimonial-content p  {
-    color: var(--light);
+    color: var(--d-blue);
+}
+h2 {
+  color: var(--dark);
 }
 
-.custom-bg {
-  /* background-color: rgba(246, 243, 243, 0.638); */
+.card {
+  background-color: #ffffff5a;
+}
+.card-text {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--d-blue);
+}
+/* background-color: rgba(246, 243, 243, 0.638); */
+
+/* .custom-bg {
+  
   border-radius: 16px;
   border: 1px solid rgba(52, 49, 49, 0.147);
   /* box-shadow: 0 2px 10px rgba(36, 35, 35, 0.253); */
-}
+*/
 
 /* Banner Override */
-section.hero {
-  background-image: url('../images/testimonial-banner.png');
-}
+/* section.hero {
+  background-image: url('../images/testimonial-banner.jpg');
+} */
 
 .testimonial-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  max-width: 700px;
+  text-align: left;
 }

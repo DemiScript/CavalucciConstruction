@@ -1,22 +1,232 @@
 @import url(global.css);
 
-body {
-  background-color: #FFF4E9;
+.section-3 {
+  background-image: url('../images/serv-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.services-hero {
+/* Services Card */
+.services-wrapper > .row {
+  padding: 24px 0;
+}
+
+.row > .col {
+  justify-content: center;
+}
+
+.hover-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.308);
+  transition: transform 0.3s ease;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 992px) {
+  .hover-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.card-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px;
+  transform: translateY(55%);
+  transition: transform 0.4s ease;
   text-align: left;
-  height: 427px;
+}
+
+.hover-card:hover .card-footer {
+  transform: translateY(0);
+}
+
+.hover-card:hover img {
+  transform: scale(1.25);
+  transition: transform 0.4s ease;
+}
+
+.card-footer {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-footer h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+}
+
+.card-footer .card-desc {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* Card Button */
+.transparent-red-sm {
+  display: inline-block;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+
+/* Center and resize button on smaller screens */
+@media (max-width: 768px) {
+  .card-footer {
+    align-items: center;
+    text-align: center;
+  }
+
+  .transparent-red-sm {
+    align-self: center;
+    font-size: 16px;
+    padding: 8px 8px;
+  }
+}
+
+/* Portfolio Css */
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;  
+}
+
+.portfolio-content h1,.portfolio-content p{
+  color: var(--light);
+}
+
+/* Gallery Section */
+.gallery-section, .gallery-image{
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 992px) {
+  .gallery-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Hover Effect */
+.gallery-image:hover {
+  filter: brightness(75%);
+}
+
+/* Modal */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  justify-content: center;
   align-items: center;
 }
 
-.services-contents {
-  display: flex;
-  flex-direction: column;
+#modalImg {
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  max-height: 80vh;
+  border-radius: 10px;
+  display: block;
+  object-fit: contain;
 }
 
-.services-hero h1,
-.services-hero p {
-  color: var(--dark);
+.modal-content-wrapper {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-footer-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.623);
+  backdrop-filter: blur(1px);
+  color: var(--d-blue);
+  padding: 16px 20px;
+  border-radius: 8px;
+  max-width: 60%;
+}
+.modal-description {
+  font-size: 16;
+}
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2.5rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 5;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.modal-arrow.left {
+  left: 20px;
+}
+
+.modal-arrow.right {
+  right: 20px;
+}
+
+.modal-arrow:hover {
+  background: #550000;
+  color: #fff;
 }

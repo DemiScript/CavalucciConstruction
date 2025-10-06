@@ -112,7 +112,7 @@ a.nav-link:hover {
 
 /* Hero & Nav Bar Section */
 section.hero {
-  height: 795px;
+  min-height: 795px;
   background-image: url('../images/hero-temp.png');
   background-size: cover;
   background-position: center;
@@ -122,7 +122,7 @@ section.hero {
 /* Better hero view for smaller screens */
 @media (max-width: 685px) {
   section.hero {
-    height: 500px;
+    min-height: 500px;
   }
 }
 
@@ -194,7 +194,7 @@ section.hero {
 }
 
 .custom-margin{
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 @media (max-width: 685px) {

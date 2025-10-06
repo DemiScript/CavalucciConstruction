@@ -69,6 +69,9 @@ h6 {
   border-radius: 50%;
 }
 
+div a{
+  color: inherit;
+}
 
 .pop-up {
   margin-top: 24px;
