@@ -29,105 +29,83 @@
   <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="Cavalucci Construction Logo" class="d-inline-block align-text-top">
-        </a>
-    
-        <!--Toggler-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon">
-          </span>
-        </button>
-    
+      <div class="navbar-container d-flex">
         <!--Collapsable Content-->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-nowrap" href="pages/testimonial.html">Testimonials</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-nowrap" target="_blank" href="https://forms.cloud.microsoft/r/Lyw7E9tuSn">Review Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/contact.html">Contact</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav justify-content-around w-100">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link text-nowrap" href="pages/testimonial.html">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link text-nowrap" target="_blank" href="https://forms.cloud.microsoft/r/Lyw7E9tuSn">Review Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
           </ul>
         </div>
+
+        <!--Toggler-->
+        <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"> </span>
+        </button>
+      </div>
     </nav>
 
-  <!-- Hero Section -->
-  <section class="row hero d-flex align-items-center px-5 py-3">  
-  <div class="col-md-8 col-12 index-content">
-    <h4 class="subtitle-2 mb-0">
-      How to Hire a
-    </h4>
-    <h1 class="lh-1">
-      <span class="accent fs-1 fs-md-3 fs-lg-2 text-nowrap">Home Improvement</span>
-      Contractor
-    </h1>
-    <p class="mt-4 lh-base">
-      With over 38 years of proven expertise, Cavalucci Construction is built on integrity, craftsmanship, and resourcefulness. Our team brings decades of hands-on experience to every project, combining timeless building standards with modern innovation to create homes that are beautiful, durable, and uniquely yours.
-      We take pride in honest communication, dependable service, and smart solutions that add real value — because your home deserves nothing less than excellence.
-    </p>
-    <p class="small">
-      Our commitment is simple: <b>to deliver quality workmanship, clear communication, and results you’ll love.</b>
-    </p>
-  </div>
+    <!-- Hero Section -->
+    <section class="row hero d-flex align-items-center px-5 py-3">  
+    <a class="logo-container" href="#">
+              <img src="images/logo.png" alt="Cavalucci Construction Logo" class="d-inline-block align-text-top">
+          </a>
+      <div class="col-md-8 col-12 index-content">
+      
+      
+    
+      <p class="mt-4 lh-base">
+        With over 38 years of proven expertise, <i style="color: var(--light);">Cavalucci Construction</i> is built on integrity, craftsmanship, and resourcefulness. Our team brings decades of hands-on experience to every project, combining timeless building standards with modern innovation to create homes that are beautiful, durable, and uniquely yours.
+        We take pride in honest communication, dependable service, and smart solutions that add real value — because your home deserves nothing less than excellence.
+      </p>
+    </div>
 
-  <div class="col-md-4 col-12">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/iaiAahqaj6g?si=pOGQ0QX0ITxHEaoS" 
-              title="YouTube video player" frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-      </iframe>
+    <div class="col-md-4 col-12">
+      <div class="">
+        <p class="">
+          How to Hire a <br>
+          Home Improvement Contractor
+        </p>
+        
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/iaiAahqaj6g?si=pOGQ0QX0ITxHEaoS" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+      </div>
+      <p>Click <a href="https://www.youtube.com/watch?v=iaiAahqaj6g">here</a> to watch video.</p>
+      </div>
     </div>
-    <p>Click <a href="https://www.youtube.com/watch?v=iaiAahqaj6g">here</a> to watch video.</p>
-  </div>
-</section>
-   
+      
+    <p>Our commitment is to deliver quality workmanship, clear communication, and results you’ll love.</p>
+  </section>
+    
   <!-- Footer -->
-  <footer class="footer py-4">
-    <div class="container d-flex justify-content-between align-items-center">
-      <!-- Nav Links -->
-      <nav class="footer-nav">
-        <ul class="list-unstyled d-flex">
-          <li class="mx-3"><a href="pages/about.html">About</a></li>
-          <li class="mx-3"><a href="#services">Services</a></li>
-          <li class="mx-3"><a href="pages/portfolio.html">Portfolio</a></li>
-          <li class="mx-3"><a href="pages/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-  
-      <!-- Logo -->
-      <div class="footer-logo text-center">
-        <a href="#">
-          <img src="images/logo.png" alt="Cavalucci Construction Logo" width="200">
-        </a>
-      </div>
-  
-      <!-- Terms of Service and Privacy Policy -->
-      <div class="footer-right">
-        <ul class="list-unstyled d-flex">
-          <li class="mx-3"><a href="pages/tos.html">Terms of Service</a></li>
-          <li class="mx-3"><a href="pages/privacy.html">Privacy Policy</a></li>
+  <footer class="navbar-expand-lg">
+    
+    <div class="navbar-container">
+      <!--Collapsable Content-->
+      <ul class="navbar-nav justify-content-around w-100">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-nowrap" href="pages/testimonial.html">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link text-nowrap" target="_blank" href="https://forms.cloud.microsoft/r/Lyw7E9tuSn">Review Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/tos.html">Terms of Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/privacy.html">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
-    <div class="container text-center py-3">
-      <small>&copy; <span id="current-year"></span> Cavalucci Construction. All rights reserved.</small>
-      <br>
-      <small>Developed By DemiScript Solutions</small>
+    <div class="text-center w-100">
+      <p><small>&copy; <span id="current-year"></span> Cavalucci Construction. All rights reserved. 
+        <br>
+        Developed By DemiScript Solutions.</small></p>
     </div>
   </footer>
     
