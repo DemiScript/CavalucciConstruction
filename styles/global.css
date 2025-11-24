@@ -90,17 +90,16 @@ a.nav-link {
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--accent);
 }
 
 a.active {
+  color: var(--accent) !important;
   text-decoration: underline;
   text-underline-offset: 7px; 
   text-decoration-thickness: 2px;
 }
 
 a.nav-link:hover {
-  color: var(--accent); 
   text-decoration: underline;
   text-underline-offset: 7px; 
   text-decoration-thickness: 2px;
@@ -108,7 +107,7 @@ a.nav-link:hover {
 
 .navbar-brand img {
   padding-right: 35px;
-  width: 130%;
+  width: 100%;
   height: auto;
 }
 
@@ -122,10 +121,6 @@ a.nav-link:hover {
 .navbar.clicked {
   background-color: #fff !important;
   transition: none !important;
-}
-/* Accent Color */
-.accent {
-  color: var(--accent);
 }
 
 /* Hero & Nav Bar Section */
