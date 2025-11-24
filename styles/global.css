@@ -203,7 +203,7 @@ section.hero {
 
 /* Hero Text Shadow */
 .shadow-text{
-  text-shadow: 0 0 10px rgba(20, 20, 20, 0.361);
+  text-shadow: 0 5px 10px rgba(20, 20, 20, 0.815);
 }
 
 .custom-margin{
