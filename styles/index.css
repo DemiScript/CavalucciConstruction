@@ -17,7 +17,8 @@ section.hero {
   position: relative;
   width: 100%;
   height: auto;
-  max-width: 70vh;
+  max-width: 60vh;
+  
 }
 
 h1,h2,h3,h4,h5,h6,b, p{
@@ -32,8 +33,19 @@ p > span {
   position: relative;
   top: 0;
   left: 0;
-  width: 75%;
+  width: 60%;
   aspect-ratio: 16 / 9 ;
   border: none;
 }
+.video-link:hover{
+  font-style: italic;
+}
 
+@media (max-width: 1200px) {
+  .column-right {
+    text-align: center;
+  }
+  .end-notes {
+    text-align: center;
+  }
+}
