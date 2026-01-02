@@ -28,7 +28,7 @@ small img {
   filter: brightness(0) saturate(100%) invert(64%) sepia(10%) saturate(312%) hue-rotate(185deg) brightness(86%) contrast(83%);
 }
 
-small {
+.card-footer small {
   color: var(--nav-link);
 }
 
