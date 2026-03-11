@@ -87,7 +87,16 @@ div a{
   cursor: pointer;
 }
 
-.cta {
+.faq {
+  background-color: var(--accent);
+}
+
+.faq h2, .faq button, .faq-answer {
+  color: var(--light);
+}
+
+
+/* .cta {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,19 +153,12 @@ div a{
     top: 8px;
     right: 14px;
   }
-}
+} */
 
 /*  Footer Styles  */
-footer {
-  background-color: #191A1B; 
-  color: var(--light);
-  border-color: #191A1B !important;
-}
 
 /* Footer Links */
-footer a {
-  color: var(--light) !important;
-}
+
 @media (max-width: 768px) {
   .about-contents {
     flex-direction: column;
@@ -182,4 +184,42 @@ footer a {
     height: auto;
   }
   
+}
+
+@media (max-width: 992px) {
+  /* Right-align collapsed navbar links (only on smaller screens)
+     Make each list row fill the full width so hover/background covers entire row */
+  nav.navbar .navbar-collapse .navbar-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* allow items to stretch to full width */
+  }
+
+  nav.navbar .navbar-collapse .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  nav.navbar .navbar-collapse .navbar-nav .nav-link {
+    display: block; /* let anchor fill the list item */
+    width: 100%;
+    text-align: right; /* keep visible text right-aligned */
+  }
+
+ 
+  nav.navbar .navbar-collapse .navbar-nav .nav-item,
+  nav.navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  nav.navbar .navbar-collapse .navbar-nav .nav-item:hover,
+  nav.navbar .navbar-collapse .navbar-nav .nav-item:focus-within {
+    background-color: rgba(13,24,33,0.06);
+  }
+
+  nav.navbar .navbar-collapse .navbar-nav .nav-item .nav-link:focus-visible {
+    outline: 2px solid rgba(85,0,0,0.12);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 }

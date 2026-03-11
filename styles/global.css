@@ -14,7 +14,7 @@ html {
   --light: #E9E8E8;
   --dark: #2C2C2C;
   --d-blue: #0D1821;
-  --nav-link: #BDBABA;
+  --nav-link: #888c96;
   --accent: #550000;
 
 }
@@ -25,7 +25,7 @@ html {
   padding: 0;
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  letter-spacing: 0.07em;
+  letter-spacing: 0.02em;
   color: var(--dark);
 }
 
@@ -57,6 +57,11 @@ p {
   color: var(--light);
 }
 
+small {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
 /* Navigation Bar & When Page Active Show Underline & Effect when Link is hovered over */
 .navbar {
   transition: background-color 0.3s ease;
@@ -64,6 +69,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 13vh;
   z-index: 1000;
   background: #ffffff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
@@ -74,23 +80,23 @@ a.nav-link {
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--dark);
 }
+
 a.active {
-  text-decoration: underline;
-  text-underline-offset: 5px; 
-  text-decoration-thickness: 3px;
   color: var(--accent) !important;
-}
-a.nav-link:hover {
-  color: var(--accent); 
   text-decoration: underline;
-  text-underline-offset: 5px; 
-  text-decoration-thickness: 3px;
+  text-underline-offset: 7px; 
+  text-decoration-thickness: 2px;
 }
+
+a.nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 7px; 
+  text-decoration-thickness: 2px;
+}
+
 .navbar-brand img {
-  padding-right: 35px;
-  width: 130%;
+  width: 100%;
   height: auto;
 }
 
@@ -104,10 +110,6 @@ a.nav-link:hover {
 .navbar.clicked {
   background-color: #fff !important;
   transition: none !important;
-}
-/* Accent Color */
-.accent {
-  color: var(--accent);
 }
 
 /* Hero & Nav Bar Section */
@@ -190,7 +192,7 @@ section.hero {
 
 /* Hero Text Shadow */
 .shadow-text{
-  text-shadow: 0 0 10px rgba(20, 20, 20, 0.361);
+  text-shadow: 0 5px 10px rgba(20, 20, 20, 0.815);
 }
 
 .custom-margin{
@@ -204,68 +206,59 @@ section.hero {
 }
 
 /* Footer Style */
-.footer {
-  border-top: 1px solid #ddd;
-}
-
-.footer a {
-  text-decoration: none;
-  color: #191A1B;
-}
-
-.footer a:hover {
-  color: #550000;
-}
-
-/* Footer Nav (Left) */
-.footer-nav ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-nav ul li {
-  list-style: none;
-}
-
-.footer-nav ul li a {
-  font-size: 1rem;
-  padding: 0.5rem;
-  display: block;
-}
-
-.footer-logo img {
-  max-width: 100%;
-}
-
-/* Footer Right Links */
-.footer-right ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-right ul li {
-  list-style: none;
-}
-
-.footer-right ul li a {
-  font-size: 1rem;
-  padding: 0.5rem;
-  display: block;
-}
-
-.footer-logo img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
 #current-year {
   font-size: 1rem;
 }
 
+/* Base layout (desktop) */
+/* footer .footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} */
+
+footer .navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping before mobile breakpoint */
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Scale links down slightly as screen gets smaller */
+@media (max-width: 1200px) {
+  footer .navbar-nav .nav-link {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Mobile layout — stack vertically and center */
+@media (max-width: 768px) {
+  footer .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+    margin: 0.25rem 0;
+  }
+
+  footer .navbar-nav .nav-link {
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+
+
+/* 
 @media (max-width: 768px) {
   .footer .container {
     flex-direction: column;
@@ -335,4 +328,4 @@ section.hero {
     align-items: center;
     gap: 12px;
   }
-}
+} */
