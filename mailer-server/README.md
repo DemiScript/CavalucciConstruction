@@ -4,6 +4,12 @@ A standalone Node.js + Express server that receives contact form submissions and
 
 > Resend sends over HTTPS, which is why this works on hosts that block outbound SMTP (such as Render's free tier).
 
+Each submission sends **two** emails:
+1. A **notification** to the business (`RECIPIENT_EMAIL`), with the visitor's address as reply-to.
+2. An **auto-confirmation** to the visitor, from `CONFIRMATION_FROM_EMAIL`.
+
+The notification is the critical send (a failure returns HTTP 500). The confirmation is best-effort — if it fails, the failure is logged but the request still succeeds, so a captured lead is never lost.
+
 ## Requirements
 
 - Node.js 18+ (ESM project — `"type": "module"`)
@@ -46,8 +52,9 @@ If `RESEND_API_KEY` is missing you'll instead see `RESEND_API_KEY is not set —
 |---|---|
 | `PORT` | Port the server listens on (default `3001`). On Render, leave unset — the platform injects it. |
 | `RESEND_API_KEY` | Your Resend API key |
-| `FROM_EMAIL` | The "from" address, e.g. `Cavalucci Contact <onboarding@resend.dev>` for testing, or `Cavalucci Contact <contact@cavalucci.com>` once your domain is verified |
-| `RECIPIENT_EMAIL` | Where contact form submissions are delivered |
+| `FROM_EMAIL` | "From" address on the notification email, e.g. `Cavalucci Construction <ralph@cavalucci.com>` (must be a mailbox on your verified domain) |
+| `CONFIRMATION_FROM_EMAIL` | "From" address on the auto-confirmation sent to the visitor, e.g. `Cavalucci Construction <noreply@cavalucci.com>` (must be on your verified domain) |
+| `RECIPIENT_EMAIL` | Where notifications are delivered; also the reply-to on confirmation emails |
 | `CORS_ORIGIN` | Allowed frontend origin(s), comma-separated (e.g. `https://cavalucci.com,https://www.cavalucci.com`). Blank in local dev allows any localhost origin. |
 
 ### Resend setup
