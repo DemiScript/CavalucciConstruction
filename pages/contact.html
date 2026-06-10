@@ -135,8 +135,8 @@
 
             <!-- Fourth Row: TextBox-->
             <div class="mb-0">
-              <label for="message" class="form-label">Tell us your project, ideas, or questions</label>
-              <textarea class="form-control form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="message" name="message" rows="4" required></textarea>
+              <label for="projectDetails" class="form-label">Tell us about your project, ideas, or questions</label>
+              <textarea class="form-control form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="projectDetails" name="projectDetails" rows="4" required></textarea>
             </div>
 
             <p class="my-3"><small class="text-black-50 fs-6">By submitting this form, you agree to be contacted regarding your inquiry. Your information will be handled with care and used solely for communication purposes. </small></p>
@@ -230,7 +230,7 @@
         return;
       }
 
-      // Shape the payload to match the API's Joi schema (nested address, `idea`).
+      // Shape the payload to match the API's Joi schema (nested address, projectDetails).
       const payload = {
         name: val('name'),
         phone: val('phone'),
@@ -242,7 +242,7 @@
           state: val('state'),
           zip: val('zip'),
         },
-        idea: val('message'),
+        projectDetails: val('projectDetails'),
       };
 
       const originalLabel = submitBtn.textContent;
