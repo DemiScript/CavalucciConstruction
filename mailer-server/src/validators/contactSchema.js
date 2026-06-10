@@ -30,7 +30,7 @@ export const contactSchema = Joi.object({
       }),
   }).required(),
 
-  idea: Joi.string().trim().min(10).max(2000).required(),
+  projectDetails: Joi.string().trim().min(10).max(2000).required(),
 }).options({ stripUnknown: true });
 
 export default contactSchema;
