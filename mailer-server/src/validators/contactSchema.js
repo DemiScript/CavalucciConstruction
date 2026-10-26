@@ -84,6 +84,9 @@ export const contactSchema = Joi.object({
   // Honeypot: must be empty. Declared so it passes schema validation and the
   // route can inspect it itself.
   _honey: Joi.string().allow('').max(200).optional(),
+
+  // Cloudflare Turnstile token; verified server-side in the route, then dropped.
+  turnstileToken: Joi.string().allow('').max(2048).optional(),
 }).options({ stripUnknown: false });
 
 export default contactSchema;

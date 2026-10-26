@@ -151,6 +151,9 @@
 
             <p class="my-3"><small class="text-black-50 fs-6">By submitting this form, you agree to be contacted regarding your inquiry. Your information will be handled with care and used solely for communication purposes. </small></p>
 
+            <!-- Cloudflare Turnstile bot check (rendered by script below) -->
+            <div id="turnstile-widget" class="d-flex justify-content-center mt-3"></div>
+
             <!-- Error message (hidden until a submission fails) -->
             <div id="contact-error" class="alert alert-danger d-none mt-3" role="alert"></div>
 
@@ -206,6 +209,7 @@
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit" async defer></script>
 <script>
   // Wire the contact form to the mailer-server API: submit via fetch (no page
   // reload) and confirm with a modal on success.
@@ -222,6 +226,30 @@
       : 'https://cavalucciconstruction.onrender.com/api/contact';
 
     const val = (id) => document.getElementById(id).value.trim();
+
+    // Cloudflare Turnstile. The site key is public by design (the secret key
+    // lives only on the server). Locally we use Cloudflare's always-pass test
+    // key; if no production key is set the widget is skipped and the server
+    // decides whether a token is required.
+    const TURNSTILE_SITE_KEY = isLocal ? '1x00000000000000000000AA' : '';
+    let turnstileWidgetId = null;
+    let turnstileToken = '';
+
+    window.onTurnstileLoad = () => {
+      if (!TURNSTILE_SITE_KEY) return;
+      turnstileWidgetId = turnstile.render('#turnstile-widget', {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token) => { turnstileToken = token; },
+        'expired-callback': () => { turnstileToken = ''; },
+        'error-callback': () => { turnstileToken = ''; },
+      });
+    };
+
+    // Tokens are single-use, so every attempt needs a fresh one.
+    const resetTurnstile = () => {
+      turnstileToken = '';
+      if (turnstileWidgetId !== null) turnstile.reset(turnstileWidgetId);
+    };
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -242,6 +270,12 @@
         return;
       }
 
+      if (TURNSTILE_SITE_KEY && !turnstileToken) {
+        errorBox.textContent = 'Please wait for the verification check to finish, then try again.';
+        errorBox.classList.remove('d-none');
+        return;
+      }
+
       // Shape the payload to match the API's Joi schema (nested address, projectDetails).
       const payload = {
         name: val('name'),
@@ -256,6 +290,7 @@
         },
         projectDetails: val('projectDetails'),
         _honey: honey,
+        turnstileToken,
       };
 
       const originalLabel = submitBtn.textContent;
@@ -281,6 +316,7 @@
         errorBox.textContent = "We couldn't reach the server. Please check your connection and try again.";
         errorBox.classList.remove('d-none');
       } finally {
+        resetTurnstile();
         submitBtn.disabled = false;
         submitBtn.textContent = originalLabel;
       }

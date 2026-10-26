@@ -55,6 +55,8 @@ If `RESEND_API_KEY` is missing you'll instead see `RESEND_API_KEY is not set —
 | `FROM_EMAIL` | "From" address on the notification email, e.g. `Cavalucci Construction <ralph@cavalucci.com>` (must be a mailbox on your verified domain) |
 | `CONFIRMATION_FROM_EMAIL` | "From" address on the auto-confirmation sent to the visitor, e.g. `Cavalucci Construction <noreply@cavalucci.com>` (must be on your verified domain) |
 | `RECIPIENT_EMAIL` | Where notifications are delivered; also the reply-to on confirmation emails |
+| `GOOGLE_PLACES_API_KEY` | Google Places API (New) key for address autocomplete. Used server-side only; restrict it to Places API (New). |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key. When set, `/api/contact` requires a valid `turnstileToken`; when unset, the check is skipped with a warning. Cloudflare's always-pass test secret is `1x0000000000000000000000000000000AA`. |
 | `CORS_ORIGIN` | Allowed frontend origin(s), comma-separated (e.g. `https://cavalucci.com,https://www.cavalucci.com`). Blank in local dev allows any localhost origin. |
 
 ### Resend setup
