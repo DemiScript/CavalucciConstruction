@@ -2,6 +2,7 @@ import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
 import { contactSchema } from '../validators/contactSchema.js';
 import { sendMail } from '../services/mailer.js';
+import { verifyTurnstile } from '../services/turnstile.js';
 
 const router = Router();
 
@@ -49,7 +50,7 @@ router.post('/', contactLimiter, async (req, res, next) => {
     }
 
     // 2. Honeypot — inspected here, never trusted from a client-side flag.
-    const { _honey: honey, ...fields } = value;
+    const { _honey: honey, turnstileToken, ...fields } = value;
     if (honey) {
       logRejection(req, 'honeypot');
       return res.status(400).json({
@@ -58,7 +59,16 @@ router.post('/', contactLimiter, async (req, res, next) => {
       });
     }
 
-    // 3. Only fully validated requests reach Resend.
+    // 3. Bot check — Cloudflare must confirm the token before we send anything.
+    if (!(await verifyTurnstile(turnstileToken, req.ip))) {
+      logRejection(req, 'turnstile');
+      return res.status(400).json({
+        success: false,
+        message: 'Verification failed. Please refresh the page and try again.',
+      });
+    }
+
+    // 4. Only fully validated requests reach Resend.
     await sendMail(fields);
 
     return res.status(200).json({
