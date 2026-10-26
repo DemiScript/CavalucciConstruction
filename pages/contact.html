@@ -85,30 +85,23 @@
         </div>
         <!-- Contact Form (Right Side)-->
         <div class="col-12 col-lg-8">
-          <form target="_blank" action="https://formsubmit.co/demimatos19@gmail.com" method="POST">
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_subject" value="New Contact form Submission!" />
-
-            <!-- Prevent bots -->
-            <input type="hidden" name="_honey" style="display:none">
-            <!-- Disabled captcha -->
-            <input type="hidden" name="_captcha" value="false">
-            <!-- Redirect after submission -->
-            <input type="hidden" name="_next" value="/index.html" />
+          <form id="contact-form" novalidate>
+            <!-- Honeypot: bots fill this; humans never see it -->
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 
             <!-- First Row: Name, Phone, and Email -->
             <div class="row">
               <div class="col-md-4 pb-3">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="name" name="name" required>
+                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="name" name="name" maxlength="100" autocomplete="name" required>
               </div>
               <div class="col-md-4 pb-3">
                 <label for="phone" class="form-label text-nowrap">Phone Number</label>
-                <input type="tel"  class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="phone" name="phone" required>
+                <input type="tel"  class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="phone" name="phone" maxlength="20" autocomplete="tel" required>
               </div>
               <div class="col-md-4 pb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email"  class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="email" name="email" required>
+                <input type="email"  class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="email" name="email" maxlength="254" autocomplete="email" required>
               </div>
             </div>
 
@@ -116,11 +109,15 @@
             <div class="row">
               <div class="col-md-6 pb-3">
                 <label for="street" class="form-label">Street Address</label>
-                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="street" name="street" required>
+                <div class="address-autocomplete">
+                  <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="street" name="street" maxlength="100" autocomplete="address-line1" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="street-suggestions" required>
+                  <ul id="street-suggestions" class="address-suggestions d-none" role="listbox" aria-label="Address suggestions"></ul>
+                </div>
+                <div id="street-hint" class="form-text text-danger d-none" role="status"></div>
               </div>
               <div class="col-md-6 pb-3">
                 <label for="address2" class="form-label">Line 2</label>
-                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="address2" name="address2">
+                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="address2" name="address2" maxlength="100" autocomplete="address-line2">
               </div>
             </div>
 
@@ -128,25 +125,34 @@
             <div class="row">
               <div class="col-md-4 pb-3">
                 <label for="city" class="form-label">City/Town</label>
-                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="city" name="city" required>
+                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="city" name="city" maxlength="100" autocomplete="address-level2" required>
               </div>
               <div class="col-md-4 pb-3">
                 <label for="state" class="form-label">State</label>
-                <input type="text" class="form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="state" name="state" required>
+                <select class="form-select focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="state" name="state" autocomplete="address-level1" required>
+                  <option value="" selected disabled>Select</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="PA">Pennsylvania</option>
+                </select>
               </div>
               <div class="col-md-4 pb-3">
                 <label for="zip" class="form-label">Zipcode</label>
-                <input type="text" class="form-control form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="zip" name="zip" required>
+                <input type="text" class="form-control form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="zip" name="zip" inputmode="numeric" pattern="\d{5}(-\d{4})?" maxlength="10" autocomplete="postal-code" title="Enter a 5-digit ZIP (12345) or ZIP+4 (12345-6789)" required>
               </div>
             </div>
 
             <!-- Fourth Row: TextBox-->
             <div class="mb-0">
-              <label for="message" class="form-label">Tell us your project, ideas, or questions</label>
-              <textarea class="form-control form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="message" name="message" rows="4" required></textarea>
+              <label for="projectDetails" class="form-label">Tell us about your project, ideas, or questions</label>
+              <textarea class="form-control form-control focus-ring" style="--bs-focus-ring-color: rgba(85,0,0,.25)" id="projectDetails" name="projectDetails" rows="4" minlength="10" maxlength="2000" required></textarea>
             </div>
 
             <p class="my-3"><small class="text-black-50 fs-6">By submitting this form, you agree to be contacted regarding your inquiry. Your information will be handled with care and used solely for communication purposes. </small></p>
+
+            <!-- Error message (hidden until a submission fails) -->
+            <div id="contact-error" class="alert alert-danger d-none mt-3" role="alert"></div>
 
             <!-- Submit Button -->
             <div class="d-flex justify-content-center text-center mt-4">
@@ -180,11 +186,266 @@
     </div>
   </footer>
 
+  <!-- Submission Confirmation Modal -->
+  <div class="modal fade" id="contactSuccessModal" tabindex="-1" aria-labelledby="contactSuccessLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-body p-4">
+          <i class="fa-solid fa-circle-check fa-2x mb-3" style="color: var(--accent);"></i>
+          <h2 class="h5 mb-2" id="contactSuccessLabel">Message Received</h2>
+          <p class="mb-4">Thank you for reaching out. We've received your submission and will be in touch shortly.</p>
+          <button type="button" class="transparent-red" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <script>
     // Get the current year for the footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+  // Wire the contact form to the mailer-server API: submit via fetch (no page
+  // reload) and confirm with a modal on success.
+  (function () {
+    const form = document.getElementById('contact-form');
+    const errorBox = document.getElementById('contact-error');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successModal = new bootstrap.Modal(document.getElementById('contactSuccessModal'));
+
+    // Use the local server in development, the hosted server in production.
+    const isLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
+    const MAILER_API = isLocal
+      ? 'http://localhost:3001/api/contact'
+      : 'https://cavalucciconstruction.onrender.com/api/contact';
+
+    const val = (id) => document.getElementById(id).value.trim();
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      errorBox.classList.add('d-none');
+
+      // Honeypot tripped: fail without calling the API. The server inspects
+      // the same field independently, so this is only a courtesy check.
+      const honey = form.querySelector('[name="_honey"]').value;
+      if (honey) {
+        errorBox.textContent = "We couldn't process your submission.";
+        errorBox.classList.remove('d-none');
+        return;
+      }
+
+      // The form uses `novalidate`, so trigger native validation manually.
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Shape the payload to match the API's Joi schema (nested address, projectDetails).
+      const payload = {
+        name: val('name'),
+        phone: val('phone'),
+        email: val('email'),
+        address: {
+          line1: val('street'),
+          line2: val('address2'),
+          city: val('city'),
+          state: val('state'),
+          zip: val('zip'),
+        },
+        projectDetails: val('projectDetails'),
+        _honey: honey,
+      };
+
+      const originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(MAILER_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.success) {
+          form.reset();
+          successModal.show();
+        } else {
+          errorBox.textContent = data.message || 'Something went wrong. Please try again later.';
+          errorBox.classList.remove('d-none');
+        }
+      } catch (err) {
+        errorBox.textContent = "We couldn't reach the server. Please check your connection and try again.";
+        errorBox.classList.remove('d-none');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  })();
+</script>
+<script>
+  // Address autocomplete. Suggestions come from the mailer-server's Places
+  // proxy (the Google key never reaches the browser). If the proxy is
+  // unavailable the field simply behaves as a normal text input.
+  (function () {
+    const isLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
+    const PLACES_API = isLocal
+      ? 'http://localhost:3001/api/places'
+      : 'https://cavalucciconstruction.onrender.com/api/places';
+
+    const street = document.getElementById('street');
+    const list = document.getElementById('street-suggestions');
+    const hint = document.getElementById('street-hint');
+    const stateSelect = document.getElementById('state');
+    const DEBOUNCE_MS = 250;
+    const MIN_CHARS = 3;
+
+    let sessionToken = crypto.randomUUID();
+    let timer = null;
+    let requestId = 0; // discards responses that arrive out of order
+    let activeIndex = -1;
+
+    const post = async (path, body) => {
+      const res = await fetch(`${PLACES_API}/${path}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...body, sessionToken }),
+      });
+      if (!res.ok) throw new Error(`places ${res.status}`);
+      return res.json();
+    };
+
+    let filling = false; // true while we set fields programmatically
+
+    const setValue = (id, value) => {
+      const el = document.getElementById(id);
+      el.value = value;
+      // Let any validation listeners clear their error state.
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+    };
+
+    const close = () => {
+      // Cancel any pending or in-flight search so it can't reopen the list.
+      clearTimeout(timer);
+      requestId++;
+      list.classList.add('d-none');
+      list.replaceChildren();
+      street.setAttribute('aria-expanded', 'false');
+      street.removeAttribute('aria-activedescendant');
+      activeIndex = -1;
+    };
+
+    const setActive = (index) => {
+      const items = [...list.children];
+      items.forEach((li, i) => li.classList.toggle('active', i === index));
+      activeIndex = index;
+      if (index >= 0) street.setAttribute('aria-activedescendant', items[index].id);
+      else street.removeAttribute('aria-activedescendant');
+    };
+
+    const render = (suggestions) => {
+      list.replaceChildren();
+      if (!suggestions.length) return close();
+      suggestions.forEach((s, i) => {
+        const li = document.createElement('li');
+        li.id = `street-suggestion-${i}`;
+        li.setAttribute('role', 'option');
+        li.dataset.placeId = s.placeId;
+        const main = document.createElement('strong');
+        main.textContent = s.main;
+        const secondary = document.createElement('span');
+        secondary.textContent = s.secondary ? ` ${s.secondary}` : '';
+        li.append(main, secondary);
+        // mousedown (not click) so it fires before the input's blur closes the list.
+        li.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          choose(s.placeId);
+        });
+        list.appendChild(li);
+      });
+      list.classList.remove('d-none');
+      street.setAttribute('aria-expanded', 'true');
+      activeIndex = -1;
+    };
+
+    async function choose(placeId) {
+      close();
+      hint.classList.add('d-none');
+      try {
+        const { address } = await post('details', { placeId });
+        filling = true;
+        if (address.line1) setValue('street', address.line1);
+        if (address.city) setValue('city', address.city);
+        if (address.zip) setValue('zip', address.zip);
+
+        // Only set the state if it is one we serve; otherwise leave it for the
+        // visitor and say why.
+        const served = [...stateSelect.options].some((o) => o.value === address.state);
+        if (served) {
+          setValue('state', address.state);
+        } else {
+          stateSelect.value = '';
+          hint.textContent = 'We currently serve CT, NJ, NY and PA. Please check the state.';
+          hint.classList.remove('d-none');
+        }
+        filling = false;
+        close();
+        document.getElementById('address2').focus();
+      } catch (err) {
+        // Leave whatever the visitor typed; they can fill the rest manually.
+      } finally {
+        filling = false;
+        // A session ends once details are fetched; start a fresh one.
+        sessionToken = crypto.randomUUID();
+      }
+    }
+
+    street.addEventListener('input', () => {
+      if (filling) return; // our own fill, not the visitor typing
+      clearTimeout(timer);
+      const input = street.value.trim();
+      if (input.length < MIN_CHARS) return close();
+      timer = setTimeout(async () => {
+        const id = ++requestId;
+        try {
+          const data = await post('autocomplete', { input });
+          if (id === requestId) render(data.suggestions || []);
+        } catch (err) {
+          if (id === requestId) close();
+        }
+      }, DEBOUNCE_MS);
+    });
+
+    street.addEventListener('keydown', (e) => {
+      const count = list.children.length;
+      if (!count || list.classList.contains('d-none')) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setActive((activeIndex + 1) % count);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setActive((activeIndex - 1 + count) % count);
+      } else if (e.key === 'Enter' && activeIndex >= 0) {
+        e.preventDefault();
+        choose(list.children[activeIndex].dataset.placeId);
+      } else if (e.key === 'Escape') {
+        close();
+      }
+    });
+
+    street.addEventListener('blur', close);
+
+    // Clicking anywhere outside the field and list closes the dropdown, even
+    // when the click doesn't move focus (e.g. on blank page background).
+    document.addEventListener('mousedown', (e) => {
+      if (e.target !== street && !list.contains(e.target)) close();
+    });
+  })();
+</script>
 </body>
 </html>
