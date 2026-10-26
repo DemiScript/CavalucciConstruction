@@ -31,7 +31,7 @@ All brand tokens live in `:root`: accent `--accent: #550000` (deep maroon, used 
 
 ## Contact form
 
-`pages/contact.html` posts to **FormSubmit.co** (`action="https://formsubmit.co/ralph@cavalucci.com"`). It relies on hidden fields: `_honey` (honeypot — keep it hidden), `_subject`, `_template=table`, and `_next` (post-submit redirect). No server code is involved.
+`pages/contact.html` submits JSON via `fetch` to the Express/Resend API in `mailer-server/` (hosted on Render; `localhost:3001` when run locally). The hidden `_honey` honeypot is sent in the payload and re-checked server-side. All validation lives in `mailer-server/src/validators/` (Joi schema + `plausibility.js` heuristics); keep the state `<select>` in the HTML in sync with `ALLOWED_STATES`. See `mailer-server/README.md`.
 
 ## Branches & deployment
 

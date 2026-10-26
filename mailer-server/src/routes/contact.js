@@ -5,26 +5,61 @@ import { sendMail } from '../services/mailer.js';
 
 const router = Router();
 
-// Limit each IP to 10 contact submissions per 15-minute window.
+// Limit each IP to a handful of submissions per window. Tunable via env while
+// we watch legitimate traffic. The in-memory store is fine on a single Render
+// instance; use a shared store if the service ever scales out.
 const contactLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 10,
+  windowMs: 10 * 60 * 1000,
+  limit: Number(process.env.CONTACT_RATE_MAX) || 5,
+  message: {
+    success: false,
+    message: 'Too many submissions. Please try again later.',
+  },
 });
+
+// Log rejections without retaining personal information: only the reason, the
+// names of failing fields, the IP and a timestamp — never submitted values.
+function logRejection(req, reason, fields = []) {
+  console.warn(
+    JSON.stringify({
+      event: 'contact_rejected',
+      reason,
+      fields,
+      ip: req.ip,
+      ts: new Date().toISOString(),
+    })
+  );
+}
 
 router.post('/', contactLimiter, async (req, res, next) => {
   try {
+    // 1. Structure + field validation (unknown fields are rejected).
     const { error, value } = contactSchema.validate(req.body, {
       abortEarly: false,
     });
 
     if (error) {
+      logRejection(req, 'validation', [
+        ...new Set(error.details.map((detail) => detail.path.join('.'))),
+      ]);
       return res.status(400).json({
         success: false,
         message: error.details.map((detail) => detail.message).join('; '),
       });
     }
 
-    await sendMail(value);
+    // 2. Honeypot — inspected here, never trusted from a client-side flag.
+    const { _honey: honey, ...fields } = value;
+    if (honey) {
+      logRejection(req, 'honeypot');
+      return res.status(400).json({
+        success: false,
+        message: "We couldn't process your submission.",
+      });
+    }
+
+    // 3. Only fully validated requests reach Resend.
+    await sendMail(fields);
 
     return res.status(200).json({
       success: true,
