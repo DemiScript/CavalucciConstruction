@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Read(//c/Users/demid/OneDrive/Desktop/Business/Cavalucci Construction/Website Development/**)"
+    ]
+  }
+}
