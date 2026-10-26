@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import contactRouter from './routes/contact.js';
+import placesRouter from './routes/places.js';
 import errorHandler from './middleware/errorHandler.js';
 
 const app = express();
@@ -23,13 +24,14 @@ const corsOrigin = process.env.CORS_ORIGIN
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(cors({ origin: corsOrigin, methods: ['POST'] }));
-app.use(express.json());
+app.use(express.json({ limit: '10kb' }));
 
 // Health check — lets you (and Render) confirm the server is up at the base URL.
 app.get('/', (req, res) => res.json({ status: 'ok', service: 'mailer-server' }));
 
 // Routes
 app.use('/api/contact', contactRouter);
+app.use('/api/places', placesRouter);
 
 // Error handler must be mounted last.
 app.use(errorHandler);

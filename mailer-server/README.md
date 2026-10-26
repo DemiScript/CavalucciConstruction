@@ -93,10 +93,12 @@ Responses:
 |---|---|---|
 | Success | 200 | `{ "success": true, "message": "Your message has been sent." }` |
 | Validation failure | 400 | `{ "success": false, "message": "<validation detail>" }` |
-| Rate limit exceeded | 429 | express-rate-limit default response |
+| Rate limit exceeded | 429 | `{ "success": false, "message": "Too many submissions. Please try again later." }` |
 | Server / email error | 500 | `{ "success": false, "message": "Something went wrong. Please try again later." }` |
 
-Rate limit: **10 requests per IP per 15 minutes**.
+Rate limit: **5 requests per IP per 10 minutes** (override with `CONTACT_RATE_MAX`).
+
+Validation rules (server-side, Joi): state must be NJ/NY/PA/CT and the ZIP prefix must match it; name needs a plausible first + last name; street must start with a house number (or PO Box); phone must be a valid 10-digit US number; unknown fields are rejected; a populated `_honey` honeypot field returns 400 and never reaches Resend. Rejections are logged as JSON (reason + field names only, no personal data). Request bodies are capped at 10kb.
 
 ## Project Structure
 
