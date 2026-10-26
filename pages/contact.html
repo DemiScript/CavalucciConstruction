@@ -152,7 +152,7 @@
             <p class="my-3"><small class="text-black-50 fs-6">By submitting this form, you agree to be contacted regarding your inquiry. Your information will be handled with care and used solely for communication purposes. </small></p>
 
             <!-- Cloudflare Turnstile bot check (rendered by script below) -->
-            <div id="turnstile-widget" class="d-flex justify-content-center mt-3"></div>
+            <div id="turnstile-widget" class="d-flex justify-content-center"></div>
 
             <!-- Error message (hidden until a submission fails) -->
             <div id="contact-error" class="alert alert-danger d-none mt-3" role="alert"></div>
@@ -231,7 +231,7 @@
     // lives only on the server). Locally we use Cloudflare's always-pass test
     // key; if no production key is set the widget is skipped and the server
     // decides whether a token is required.
-    const TURNSTILE_SITE_KEY = isLocal ? '1x00000000000000000000AA' : '';
+    const TURNSTILE_SITE_KEY = isLocal ? '1x00000000000000000000AA' : '0x4AAAAAAFmICAQaAbqSFCzT';
     let turnstileWidgetId = null;
     let turnstileToken = '';
 
@@ -239,6 +239,8 @@
       if (!TURNSTILE_SITE_KEY) return;
       turnstileWidgetId = turnstile.render('#turnstile-widget', {
         sitekey: TURNSTILE_SITE_KEY,
+        // Stay hidden unless Cloudflare needs the visitor to interact.
+        appearance: 'interaction-only',
         callback: (token) => { turnstileToken = token; },
         'expired-callback': () => { turnstileToken = ''; },
         'error-callback': () => { turnstileToken = ''; },
